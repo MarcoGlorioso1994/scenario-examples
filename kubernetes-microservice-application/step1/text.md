@@ -339,5 +339,11 @@ spec:
       - name: tmp
         emptyDir: {}
 ---
-```{{exec}}
+```{{copy}}
 
+
+Apply the manifest for the microservices deployments
+
+```
+kubernetes apply -f bookinfo.yaml
+```{{exec}}
