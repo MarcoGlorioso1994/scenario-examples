@@ -619,7 +619,6 @@ spec:
       resources:
         requests:
           storage: 10Gi
-
 ```{{copy}}
 
 
