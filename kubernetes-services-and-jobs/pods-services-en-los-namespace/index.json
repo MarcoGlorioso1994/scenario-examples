@@ -1,6 +1,6 @@
 {
-    "title": "Creación de un ClusterIp y analisis de utilizo del los selectores Labels",
-    "description": "",
+    "title": "Creación de recursos en diferentes namespaces",
+    "description": "Creación de recursos en diferentes namespaces y analisis sobre el aislamiento lógico y la conectividad de red",
     "details": {
       "intro": {
         "title": "Introducción",

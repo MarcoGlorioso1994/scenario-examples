@@ -1,6 +1,6 @@
 {
-    "title": "Creación de un ClusterIp y analisis de utilizo del los selectores Labels",
-    "description": "",
+    "title": "Creación de un servicio NodePort",
+    "description": "Creación de un servicio NodePort y analisis de sus funcionalidades",
     "details": {
       "intro": {
         "title": "Introducción",

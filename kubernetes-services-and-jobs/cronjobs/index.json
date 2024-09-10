@@ -1,6 +1,6 @@
 {
-    "title": "Creación de un ClusterIp y analisis de utilizo del los selectores Labels",
-    "description": "",
+    "title": "Creación de un CronJob",
+    "description": "Creación de un CronJob y analisis de su comportamiento dentro del clúster",
     "details": {
       "intro": {
         "title": "Introducción",

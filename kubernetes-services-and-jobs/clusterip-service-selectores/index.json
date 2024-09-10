@@ -1,6 +1,6 @@
 {
-    "title": "Creación de un service ClusterIp y analisis de utilizo del los selectores Labels",
-    "description": "",
+    "title": "Creación de un servicio ClusterIP",
+    "description": "Creación de un servicio de tipo ClusterIP y analisis de utilizo del los selectores Labels",
     "details": {
       "intro": {
         "title": "Introducción",
