@@ -1,1 +1,1 @@
-En este laboratorio crearemos un servicio de tipo ClusterIP y analizaremos las funcionalidades de los campos label y Endpoints. 
+En este laboratorio crearemos un servicio de tipo ClusterIP y analizaremos las funcionalidades de los campos Labels y Endpoints. 

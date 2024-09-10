@@ -1,5 +1,5 @@
 {
-  "title": "Docker",
+  "title": "kubernetes-services-and-jobs",
   "items": [
     { "path": "clusterip-service-selectores" },
     { "path": "nodeport-service" },
