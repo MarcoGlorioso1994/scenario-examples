@@ -1,5 +1,5 @@
 {
-    "title": "Creación de un ClusterIp y analisis de utilizo del los selectores Labels",
+    "title": "Creación de un service ClusterIp y analisis de utilizo del los selectores Labels",
     "description": "",
     "details": {
       "intro": {
@@ -13,21 +13,21 @@
           "verify": "step1/verify.sh"
         },
         {
-          "title": "Leer los IPs de los pods",
+          "title": "Lectura de las direcciones IP de los pods",
           "text": "step2/text.md"
         },
         {
-          "title": "Creación de un ClusterIP service",
+          "title": "Creación de un service ClusterIP",
           "text": "step3/text.md",
           "verify": "step3/verify.sh"
         },
         {
-          "title": "Llamada HTTP para comprobar el correcto funcionamento del Service ClusterIP",
+          "title": "Conectividad Http al fin de comprobar el correcto funcionamento del Service ClusterIP",
           "text": "step4/text.md",
           "verify": "step4/verify.sh"
         },
         {
-            "title": "Describe del service ClusterIp para analizar la lista de los endpoints",
+            "title": "Detalles del service ClusterIp con analisis del campo Endpoints",
             "text": "step5/text.md"
         }
       ],
@@ -37,7 +37,7 @@
       }
     },
     "backend": {
-      "imageid": "ubuntu"
+      "imageid": "kubernetes-kubeadm-1node"
     },
     "interface": {
       "layout": "ide"

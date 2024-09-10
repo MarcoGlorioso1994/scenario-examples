@@ -1,6 +1,6 @@
 Vamos a desplegar nuestro primer servicio de tipo ClusterIP. 
 
-Dentro del directorio `project`, crea el fichero llamado `service.yaml`.
+Creamos el fichero `service.yaml` y añadimos el siguiente código dentro del archivo:
 
 ```
 apiVersion: v1
@@ -15,7 +15,7 @@ spec:
     targetPort: 80
 ```{{copy}}
 
-Ahora podemos desplegar el service para los tres pods creados con el deployment.
+Ahora podemos desplegar el servicio para los pods creados con el deployment.
 
 ```
 kubectl apply -f service.yaml

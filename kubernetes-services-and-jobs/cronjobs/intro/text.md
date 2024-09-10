@@ -1,0 +1,1 @@
+En este laboratorio, crearemos un recurso de tipo CronJob y analizaremos su comportamiento dentro del clúster.

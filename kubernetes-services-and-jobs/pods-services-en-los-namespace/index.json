@@ -8,22 +8,20 @@
       },
       "steps": [
         {
-          "title": "Creación de un deployment",
+          "title": "Creación de dos nuevos namespaces",
           "text": "step1/text.md",
           "verify": "step1/verify.sh"
         },
         {
-          "title": "Creación de un servicio de tipo NodePort",
-          "text": "step2/text.md",
-          "verify": "step2/verify.sh"
+          "title": "Despliegue de Deployment y servicio ClusterIP en el namespace Dev",
+          "text": "step2/text.md"
         },
         {
-          "title": "Análisis de las columnas PORT(S) y de las IPs físicas de los nodos",
-          "text": "step3/text.md",
-          "verify": "step3/verify.sh"
+          "title": "Despliegue de Deployment y servicio ClusterIP en el namespace Test",
+          "text": "step3/text.md"
         },
         {
-          "title": "Conexión HTTP para comprobar el correcto funcionamiento del servicio NodePort",
+          "title": "Conectividad HTTP desde el namespace Test hacia el servicio del namespace Dev",
           "text": "step4/text.md",
           "verify": "step4/verify.sh"
         }
@@ -34,7 +32,7 @@
       }
     },
     "backend": {
-      "imageid": "kubernetes-kubeadm-2nodes"
+      "imageid": "kubernetes-kubeadm-1node"
     },
     "interface": {
       "layout": "ide"

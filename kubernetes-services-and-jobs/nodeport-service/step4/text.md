@@ -1,15 +1,15 @@
-Para comprobar el correcto funcionamento del Service NodePort vamos a ejecutar una llamada http con utilizo de la herramienta Curl, directamente desde la command line del KillerCode
+Para comprobar el correcto funcionamiento del servicio NodePort, vamos a ejecutar una llamada HTTP utilizando la herramienta `curl`, directamente desde la línea de comandos de KillerCode.
 
 ```
 curl http://{ip_node1}:30123
 ```{{exec}}
 
-Tendrias que recibir la pagina html del web server nginx. 
+Deberías recibir la página HTML del servidor web Nginx.
 
-Podemos ejecutar la llamda http anterior pero utilizando esta vez la direccion ip del segundo nodo
+Podemos ejecutar la llamada HTTP anterior, pero esta vez utilizando la dirección IP del segundo nodo.
 
 ```
 curl http://{ip_node2}:30123
 ```{{exec}}
 
-En esta forma, hemos visto que el servicio NodePort nos permite de acceder a un pod/application desde fuera del cluster, utilizando la ips fisico de los nodos. Tambien sin tener en consideracion sobre cual nodo esta en realidad desplegado el pod de la applicacion. 
+De esta forma, hemos visto que el servicio NodePort nos permite acceder a un pod o aplicación desde fuera del clúster, utilizando las IPs físicas de los nodos. También nos permite hacerlo sin tener en cuenta en qué nodo está realmente desplegado el pod de la aplicación. 

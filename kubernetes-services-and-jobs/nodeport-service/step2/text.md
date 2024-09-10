@@ -1,6 +1,4 @@
-Vamos a desplegar nuestro primero servicio de tipo NodePort. 
-
-Crea el fichero llamado `service.yaml`.
+Vamos a desplegar nuestro primer servicio de tipo NodePort. Creamos el archivo `service.yaml` y añadimos el siguiente código dentro del archivo:
 
 ```
 apiVersion: v1
@@ -16,7 +14,7 @@ spec:
     nodePort: 30123
 ```{{copy}}
 
-Ahora podemos desplegar el service para los tres pods creados con el deployment.
+Ahora podemos desplegar el servicio para los pods creados con el deployment.
 
 ```
 kubectl apply -f service.yaml

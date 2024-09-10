@@ -1,0 +1,1 @@
+En este laboratorio, vamos a crear dos namespaces diferentes: `Dev` y `Test`. Comprobaremos el aislamiento lógico de los recursos dentro de los namespaces, así como la conectividad entre ellos.

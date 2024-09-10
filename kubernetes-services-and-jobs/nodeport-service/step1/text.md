@@ -1,4 +1,4 @@
-Creamos el fichero llamado `deployment.yaml`.
+Creamos el archivo `deployment.yaml` y añadimos el siguiente código dentro del archivo:
 
 ```
 apiVersion: apps/v1
@@ -18,26 +18,25 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.24
+        image: nginx
 ```{{copy}}
 
-Ahora podemos desplegar el deployment para crear los tres pods
+Ahora podemos desplegar el deployment para crear los pods.
 
 ```
 kubectl apply -f deployment.yaml
 ```{{exec}}
 
-Para comprobar que los pods se han levantado correctamente podemos ejecutar un comando curl hacia la ip del pod.
+Para comprobar que los pods se han levantado correctamente, podemos ejecutar un comando curl hacia la IP del pod.
 
 ```
 kubectl get pods -o wide
 ```{{exec}}
 
-Coges nota de la ip del pod creado y ejecutamos el comando curl. 
-Ademas coges nota de la columna NODE donde esta exposta la informacion de donde el pod esta desplegado. 
+Toma nota de la IP del pod creado y ejecuta el comando `curl`. Además, toma nota de la columna `NODE`, que muestra en qué nodo está desplegado el pod.
 
 ```
 curl http://{direccionIP_pod}:80
 ```{{exec}}
 
-Tendrias que recibir la pagina html del web server nginx. 
+Deberías recibir la página HTML del servidor web Nginx.

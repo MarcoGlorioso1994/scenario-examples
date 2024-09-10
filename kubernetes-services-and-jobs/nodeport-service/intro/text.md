@@ -1,1 +1,1 @@
-En este laboratorio vamos a crear una imagen Docker a partir de un archivo `Dockerfile`.
+En este laboratorio crearemos un servicio de tipo NodePort y analizaremos las funcionalidades de ese mismo.
