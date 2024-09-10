@@ -1,5 +1,5 @@
 {
-  "title": "kubernetes-services-and-jobs",
+  "title": "Kubernetes Services and Jobs",
   "items": [
     { "path": "clusterip-service-selectores" },
     { "path": "nodeport-service" },
