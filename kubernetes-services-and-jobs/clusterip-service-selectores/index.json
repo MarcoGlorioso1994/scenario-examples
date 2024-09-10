@@ -1,0 +1,45 @@
+{
+    "title": "Creación de un ClusterIp y analisis de utilizo del los selectores Labels",
+    "description": "",
+    "details": {
+      "intro": {
+        "title": "Introducción",
+        "text": "intro/text.md"
+      },
+      "steps": [
+        {
+          "title": "Creación de un deployment",
+          "text": "step1/text.md",
+          "verify": "step1/verify.sh"
+        },
+        {
+          "title": "Leer los IPs de los pods",
+          "text": "step2/text.md"
+        },
+        {
+          "title": "Creación de un ClusterIP service",
+          "text": "step3/text.md",
+          "verify": "step3/verify.sh"
+        },
+        {
+          "title": "Llamada HTTP para comprobar el correcto funcionamento del Service ClusterIP",
+          "text": "step4/text.md",
+          "verify": "step4/verify.sh"
+        },
+        {
+            "title": "Describe del service ClusterIp para analizar la lista de los endpoints",
+            "text": "step5/text.md"
+        }
+      ],
+      "finish": {
+        "title": "👏 Buen trabajo!",
+        "text": "finish/text.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    },
+    "interface": {
+      "layout": "ide"
+    }
+  }

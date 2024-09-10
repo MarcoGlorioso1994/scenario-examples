@@ -1,0 +1,45 @@
+{
+    "title": "Creación de un ClusterIp y analisis de utilizo del los selectores Labels",
+    "description": "",
+    "details": {
+      "intro": {
+        "title": "Introducción",
+        "text": "intro/text.md"
+      },
+      "steps": [
+        {
+          "title": "Creación de un deployment",
+          "text": "step1/text.md",
+          "verify": "step1/verify.sh"
+        },
+        {
+          "title": "Creación de un NodePort service",
+          "text": "step2/text.md",
+          "verify": "step2/verify.sh"
+        },
+        {
+          "title": "Análisis de las columnas PORT(S) y de las IPs fisica de los nodos",
+          "text": "step3/text.md",
+          "verify": "step3/verify.sh"
+        },
+        {
+          "title": "Connexion HTTP para comprobar el correcto funcionamento del Service NodePort",
+          "text": "step4/text.md",
+          "verify": "step4/verify.sh"
+        }
+      ],
+      "finish": {
+        "title": "👏 Buen trabajo!",
+        "text": "finish/text.md"
+      },
+      "assets": {
+        "host01": [{ "file": "project/**/*.*", "target": "/project" }]
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    },
+    "interface": {
+      "layout": "ide"
+    }
+  }
