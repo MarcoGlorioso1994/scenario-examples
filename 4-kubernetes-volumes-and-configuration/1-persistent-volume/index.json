@@ -1,0 +1,37 @@
+{
+  "title": "Persistent Volumes",
+  "description": "Creación de un Persistent Volume con estrategia de aprovisionamiento estático",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Creación de un Persistent Volume PV",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Creación de una Persistent Volume Claim PVC",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Utilizo del Persistent Volume en un deployment",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Analis de utilizo del Persistent Volume",
+        "text": "step4/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

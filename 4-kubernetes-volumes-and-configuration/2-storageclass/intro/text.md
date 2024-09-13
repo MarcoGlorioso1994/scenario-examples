@@ -1,0 +1,1 @@
+En este laboratorio, nos enfocaremos en el aprovisionamiento dinámico de volúmenes persistentes. Crearemos una **StorageClass**, la utilizaremos dentro de un **PersistentVolumeClaim** (PVC) y la montaremos en un deployment. Veremos cómo las **StorageClass** nos permiten definir el tipo de volumen que deseamos, y luego Kubernetes se encarga de crear esos volúmenes automáticamente.

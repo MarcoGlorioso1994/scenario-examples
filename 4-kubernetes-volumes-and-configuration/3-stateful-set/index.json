@@ -1,0 +1,33 @@
+{
+  "title": "StatefulSet",
+  "description": "Creación de un recurso de tipo StatefulSet",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Creación de un StatefulSet",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Analis de los PVCs y PVs en un StatefulSet",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Incremento y reducción del numero de replicas en un StatefulSet",
+        "text": "step3/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "StorageClass",
+  "description": "Creación de un Persistent Volume utilizando las StorageClass",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Creación de una StorageClass",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh",
+        "background": "step3/background.sh"
+      },
+      {
+        "title": "Creación de un Persistent Volume Claim (PVC) con StorageClass",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Utilizo del Persistent Volume Claim en un deployment",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Analis de utilizo del Persistent Volume con aprovisionamiento dinámico",
+        "text": "step4/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

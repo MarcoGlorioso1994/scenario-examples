@@ -1,0 +1,1 @@
+En este laboratorio, nos dedicaremos a la creación de un Secret, que nos permite gestionar y almacenar datos sensibles fuera de las imágenes de los contenedores. 

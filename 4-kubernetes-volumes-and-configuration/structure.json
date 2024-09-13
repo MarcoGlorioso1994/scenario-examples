@@ -1,0 +1,10 @@
+{
+  "title": "Kubernetes Volumes and Configuration",
+  "items": [
+    { "path": "1-persistent-volume" },
+    { "path": "2-storageclass" },
+    { "path": "3-stateful-set" },
+    { "path": "4-configmap" },
+    { "path": "5-secret" }
+  ]
+}

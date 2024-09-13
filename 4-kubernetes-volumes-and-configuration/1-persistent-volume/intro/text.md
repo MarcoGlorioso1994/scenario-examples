@@ -1,0 +1,1 @@
+En este laboratorio, nos enfocaremos en el aprovisionamiento estático de los volúmenes persistentes. Crearemos un **Persistent Volume** (PV) y su correspondiente **Persistent Volume Claim** (PVC), y lo montaremos en un deployment.

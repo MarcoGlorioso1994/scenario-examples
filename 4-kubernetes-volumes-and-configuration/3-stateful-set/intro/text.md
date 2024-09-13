@@ -1,0 +1,1 @@
+En este laboratorio, crearemos un recurso de tipo StatefulSet y analizaremos sus características más importantes, tales como: nombres únicos, creación ordenada y un volumen persistente específico para cada pod.

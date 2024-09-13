@@ -1,0 +1,36 @@
+{
+  "title": "ConfigMaps",
+  "description": "Creación de un ConfigMap y utilizo en un deployment",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Creación de una ConfigMap",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Creación de un deployment con ConfigMap",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Analis de almacenamiento de los datos con la ConfigMap",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Actualización de los datos con una ConfigMap",
+        "text": "step4/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

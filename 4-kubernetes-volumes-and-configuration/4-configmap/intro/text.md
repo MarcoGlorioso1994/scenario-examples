@@ -1,0 +1,1 @@
+En este laboratorio, nos dedicaremos a la creación de un ConfigMap, que nos permite gestionar y almacenar datos de configuración fuera de las imágenes de los contenedores. En la última parte del laboratorio, analizaremos cómo actualizar la configuración sin necesidad de modificar los archivos de definición de los recursos.
