@@ -23,7 +23,7 @@ Ahora podemos desplegar el Persistent Volume ejecutando el siguiente comando:
 kubectl apply -f pv.yaml
 ```{{exec}}
 
-Para comprobar que el Persistent Volume se han inicializado correctamente, podemos ejecutar un comando `kubectl get pv`,
+Para comprobar que el Persistent Volume se han inicializado correctamente, podemos ejecutar el siguiente comando
 
 ```bash
 kubectl get pv

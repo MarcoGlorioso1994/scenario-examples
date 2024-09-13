@@ -42,7 +42,7 @@ Ahora podemos desplegar el StatefulSet ejecutando el siguiente comando:
 kubectl apply -f statefulset.yaml
 ```{{exec}}
 
-Para comprobar que los 3 pods se han inicializado correctamente, podemos ejecutar un comando `kubectl get pods`,
+Para comprobar que los 3 pods se han inicializado correctamente, podemos ejecutar el siguiente comando:
 
 ```bash
 kubectl get pods

@@ -19,7 +19,7 @@ Ahora podemos crear la StorageClass ejecutando el siguiente comando:
 kubectl apply -f storageclass.yaml
 ```{{exec}}
 
-Para comprobar que la StorageClass se han inicializado correctamente, podemos ejecutar un comando `kubectl get storageclass`,
+Para comprobar que la StorageClass se han inicializado correctamente, podemos ejecutar el siguiente comando:
 
 ```bash
 kubectl get storageclass

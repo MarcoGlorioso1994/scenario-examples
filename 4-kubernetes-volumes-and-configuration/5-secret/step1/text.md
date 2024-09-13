@@ -19,7 +19,7 @@ Ahora podemos desplegar el Secret ejecutando el siguiente comando:
 kubectl apply -f secret.yaml
 ```{{exec}}
 
-Para comprobar que el secret se ha creado correctamente, podemos ejecutar un comando `kubectl get secret`,
+Para comprobar que el secret se ha creado correctamente, podemos ejecutar el siguiente comando:
 
 ```bash
 kubectl get secret

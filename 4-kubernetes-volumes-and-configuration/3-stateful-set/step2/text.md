@@ -1,6 +1,6 @@
 El StatefulSet ha creado para nosotros también tres `Persistent Volume Claims` y tres `Persistent Volumes`.
 
-Para comprobar existencia de los tres PVC y que se han inicializado correctamente, podemos ejecutar un comando `kubectl get pvc`,
+Para comprobar existencia de los tres PVC y que se han inicializado correctamente, podemos ejecutar el siguiente comando:
 
 ```bash
 kubectl get pvc

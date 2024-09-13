@@ -27,7 +27,7 @@ Ahora podemos desplegar la ConfigMap ejecutando el siguiente comando:
 kubectl apply -f configmap.yaml
 ```{{exec}}
 
-Para comprobar que la configmap se ha creado correctamente, podemos ejecutar un comando `kubectl get configmap`,
+Para comprobar que la configmap se ha creado correctamente, podemos ejecutar el siguiente comando:
 
 ```bash
 kubectl get configmap
