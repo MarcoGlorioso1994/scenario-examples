@@ -1,0 +1,1 @@
+En este laboratorio, nos dedicaremos a la creación de una aplicación con una configuración incorrecta de ConfigMap y Secrets. Analizaremos el problema de mala configuración dentro del pod y aplicaremos los cambios necesarios para solucionar el fallo en nuestro despliegue.

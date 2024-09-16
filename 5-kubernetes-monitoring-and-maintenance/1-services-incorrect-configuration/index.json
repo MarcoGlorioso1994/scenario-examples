@@ -1,0 +1,36 @@
+{
+  "title": "Servicio mal configurados",
+  "description": "Despliegue de un servicio con configuración incorrecta, investigación sobre el fallo y solución del mismo",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Despliegue de una aplicación y de un servicio mal configurado",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Investigación sobre la conectividad incorrecta entre aplicación y servicio",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Solución del fallo ajustando la configuración del servicio",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Verifica de la conectividad correcta",
+        "text": "step4/text.md"
+      } 
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

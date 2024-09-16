@@ -1,0 +1,1 @@
+En este laboratorio, nos dedicaremos a la creación de una aplicación simple y un servicio asociado con una configuración incorrecta de conectividad. Analizaremos el problema conectándonos dentro del pod y aplicaremos los cambios necesarios para solucionar el fallo en nuestro despliegue.

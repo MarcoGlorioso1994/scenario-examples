@@ -1,0 +1,1 @@
+En este laboratorio, aprenderás a trabajar con PersistentVolumeClaims (PVC) y StorageClass en Kubernetes. Crearemos un pod que dependa de un PVC, simularás un error relacionado con una StorageClass faltante, y diagnosticarás el problema revisando la configuración y los eventos generados por Kubernetes.

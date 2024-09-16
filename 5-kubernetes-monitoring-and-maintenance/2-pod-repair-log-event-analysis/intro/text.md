@@ -1,0 +1,1 @@
+En este laboratorio, nos dedicaremos a la creación de una aplicación con dos contenedores, donde uno de ellos tiene un fallo simulado. Analizaremos el problema investigando los Logs y los Eventos de Kubernetes del pod, y actualizaremos el archivo de despliegue para solucionar el fallo.

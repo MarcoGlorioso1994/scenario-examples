@@ -1,0 +1,37 @@
+{
+  "title": "Aplicación con PVC y StorageClass mal configurado",
+  "description": "Despliegue de una aplicación, investigación del fallo del PVC y StorageClass",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Despliegue de una PVC y de un Pod",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Investigación del fallo por la falta de una StorageClass",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Solución del fallo ajustando la definición de la StorageClass",
+        "text": "step3/text.md",
+        "background": "step3/background.sh"
+      },
+      {
+        "title": "Verificación de la solución",
+        "text": "step4/text.md"
+      } 
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

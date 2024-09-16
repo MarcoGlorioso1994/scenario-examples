@@ -1,0 +1,36 @@
+{
+  "title": "Implementación de Health Checks",
+  "description": "Despliegue de una aplicación que incluya livenessProbe y readinessProbe",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Despliegue de una aplicación con livenessProbe y readinessProbe",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Simulación de un fallo en la aplicación",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Análisis el comportamiento de los probes",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Solución del fallo",
+        "text": "step4/text.md"
+      }   
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

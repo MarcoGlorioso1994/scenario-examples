@@ -1,0 +1,36 @@
+{
+  "title": "Aplicación con Configmaps y Secrets mal configurado",
+  "description": "Despliegue de una aplicación, investigación del fallo utilizando ConfigMap y Secrets",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Despliegue de una ConfigMap, un Secret y un aplicación",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Simulación de un fallo en la configuracion entre aplicación y la ConfigMap",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Solución del fallo ajustando la configuración",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Verificación de la solución",
+        "text": "step4/text.md"
+      } 
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

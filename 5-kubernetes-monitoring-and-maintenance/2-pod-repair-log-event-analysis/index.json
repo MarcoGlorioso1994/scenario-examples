@@ -1,0 +1,36 @@
+{
+  "title": "Reparación de los pods con logs y eventos",
+  "description": "Despliegue de una aplicación, investigación del fallo utilizando Logs y Eventos en Kubernetes",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Despliegue de una aplicación con un fallo simulado en un contenedor",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Investigación sobre el fallo del contenedor, utilizando Logs y Eventos Kubernetes",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Solución del fallo ajustando la configuración del contenedor",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Verificación de la solución",
+        "text": "step4/text.md"
+      } 
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
