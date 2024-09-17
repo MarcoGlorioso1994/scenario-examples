@@ -1,4 +1,4 @@
-Al fin de solucionar nuestra applicacion, eliminamos nuestra applicacion y la vamos a actualizar de vulta:
+Tenemos que esperar unos segundos antes de poder verificar que ahora nuestro pod está desplegado correctamente.
 
 Verificamos el estado del pod:
 

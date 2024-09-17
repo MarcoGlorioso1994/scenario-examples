@@ -13,7 +13,3 @@ kubectl describe pod my-pvc-pod
 ```{{exec}}
 
 En la sección "Events", es probable que veamos mensajes relacionados con el fallo de aprovisionamiento de volúmenes debido a la falta de una StorageClass.
-
-```bash
-kubectl describe pod my-config-secret-pod
-```{{exec}}

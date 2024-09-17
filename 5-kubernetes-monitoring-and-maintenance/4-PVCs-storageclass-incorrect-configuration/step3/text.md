@@ -1,6 +1,6 @@
 Para resolver el problema, necesitamos agregar una StorageClass o especificar una existente en el PVC.
 
-Vamos a crear una StorageClass que use el aprovisionador `rancher.io/local-path` con eso podemos crear PVs en nuestro entorno local. 
+Vamos a crear una StorageClass que use el aprovisionador `rancher.io/local-path` con eso podemos crear Persisten Volumes en nuestro entorno local. 
 
 Para ello, creamos el archivo `storageclass.yaml` y añadimos el siguiente código dentro del archivo:
 
@@ -8,7 +8,7 @@ Para ello, creamos el archivo `storageclass.yaml` y añadimos el siguiente códi
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: standard
+  name: local-storageclass
 provisioner: rancher.io/local-path
 volumeBindingMode: WaitForFirstConsumer
 ```{{copy}}
@@ -19,7 +19,7 @@ Ahora podemos desplegar la StorageClass ejecutando el siguiente comando:
 kubectl apply -f storageclass.yaml
 ```{{exec}}
 
-Modificamos el PVC para usar la nueva StorageClass. Replazamos el `archivo pvc-pod.yaml` con el siguiente código:
+Modificamos el PVC para usar la nueva StorageClass. Replazamos el archivo `pvc-pod.yaml` con el siguiente código:
 
 ```yaml
 apiVersion: v1
@@ -27,7 +27,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: my-pvc
 spec:
-  storageClassName: standard  # Nombre actualizado 
+  storageClassName: local-storageclass  # Nombre actualizado 
   accessModes:
     - ReadWriteOnce
   resources:
@@ -48,10 +48,14 @@ spec:
   volumes:
   - name: my-storage
     persistentVolumeClaim:
-      claimName:\ my-pvc
+      claimName: my-pvc
 ```{{copy}}
 
-Aplicamos los archivos para crear el PVC y el Pod:
+Para solucionar el fallo, es necesario eliminar el PersistentVolumeClaim precedente porque es un recurso inmutable. Eliminamos el PVC con el siguiente comando:
+
+k delete pvc my-pvc
+
+Ahora podemos aplicar el archivo actualizado para crear el PVC y actualizar el pod (nota: el pod no se crea nuevo, simplemente se actualiza): 
 
 ```bash
 kubectl apply -f pvc-pod.yaml

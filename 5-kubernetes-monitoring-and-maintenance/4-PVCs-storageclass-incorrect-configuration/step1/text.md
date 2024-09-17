@@ -1,4 +1,4 @@
-Como primer paso, crearemos un archivo YAML para desplegar PersistentVolumeClaim (PVC) y un pod que lo use. El PVC intentará solicitar almacenamiento, pero no especificaremos la StorageClass para provocar un error.
+Como primer paso, crearemos un archivo YAML para desplegar un PersistentVolumeClaim (PVC) y un pod que lo utilice. El PVC intentará solicitar almacenamiento, pero especificaremos una StorageClass que aún no existe para provocar un error.
 
 Para ello, creamos el archivo `pvc-pod.yaml` y añadimos el siguiente código dentro del archivo:
 
@@ -48,6 +48,7 @@ kubectl get pvc
 
 Vemos que el PVC se encuentra en un estado de Pending porque no puede encontrar una StorageClass llamada "wrong-name-storageclass".
 
+```bash
 kubectl get pods
 ```{{exec}}
 
