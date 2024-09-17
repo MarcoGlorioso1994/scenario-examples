@@ -4,6 +4,6 @@
     { "path": "2-pod-repair-log-event-analysis" },
     { "path": "3-configmaps-secrets-incorrect-configuration" },
     { "path": "4-PVCs-storageclass-incorrect-configuration" },
-    { "path": "5-implementación-health-checks" }
+    { "path": "5-health-checks-implementation" }
   ]
 }
