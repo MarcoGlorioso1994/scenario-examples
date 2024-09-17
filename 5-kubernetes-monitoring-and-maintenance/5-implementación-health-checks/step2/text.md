@@ -1,16 +1,10 @@
-Para simular un fallo y observar cómo los probes gestionan el problema, podemos ejecutar un comando que corrompa temporalmente el servidor web dentro del pod.
-
-Come primer paso necesitamos obténer el nombre del pod:
-
-```bash
-kubectl get pods
-```{{exec}}
+Para simular un fallo y observar el probe de readiness gestiona el problema, podemos ejecutar un comando que corrompa el servidor web dentro del pod.
 
 Accedemos al contenedor:
 
 ```bash
-kubectl exec -it <nombre-del-pod> -- //bin/bash
-```{{exec}}
+kubectl exec -it my-app -- //bin/bash
+```{{copy}}
 
 Dentro del contenedor, vamos a eliminar el archivo de configuración de nginx para simular un fallo:
 

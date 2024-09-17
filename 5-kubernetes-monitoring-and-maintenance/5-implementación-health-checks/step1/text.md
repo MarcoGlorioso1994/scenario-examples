@@ -1,8 +1,26 @@
 Come primer paso, necesitamos desplegar una aplicación que incluya livenessProbe y readinessProbe.
 
-Para ello, creamos el archivo `deployment.yaml` y añadimos el siguiente código dentro del archivo:
+Para ello, creamos el archivo `pod.yaml` y añadimos el siguiente código dentro del archivo:
 
 ```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app
+spec:
+  containers:
+  - name: my-app
+    image: nginx
+    ports:
+      - containerPort: 80
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -42,17 +60,11 @@ Ambos probes hacen una solicitud HTTP GET a la raíz / del servidor web nginx en
 Ahora podemos desplegar el deployment ejecutando el siguiente comando:
 
 ```bash
-kubectl apply -f deployment.yaml
+kubectl apply -f pod.yaml
 ```{{exec}}
 
 Para comprobar que el pod se ha creado correctamente, podemos ejecutar el siguiente comando:
 
 ```bash
 kubectl get pods
-```{{exec}}
-
-Ademas, podemos observar el estado del pod con el siguiente comando:
-
-```bash
-kubectl describe pod <nombre-del-pod>
 ```{{exec}}
