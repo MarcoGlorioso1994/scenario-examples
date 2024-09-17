@@ -1,6 +1,6 @@
 Después de eliminar el contenido del directorio /html, el probe de readiness seguramente ha fallado.
 
-Verificamos los eventos del pod(nota: Ejecuta el comando `exit` para salir de la shell del contenedor):
+Verificamos los eventos del pod: (nota: Ejecuta el comando `exit` para salir de la shell del contenedor)
 
 ```bash
 kubectl describe pod my-app
@@ -14,4 +14,4 @@ Podemos comprobar que el contenedor no se ha reiniciado con el siguiente comando
 kubectl get pods
 ```{{exec}}
 
-Podemos ver cómo el pod está en estado **Running**, pero en la columna **READY** el valor es `0/1`, lo que significa que 0 de los contenedores están listos.
+Podemos ver cómo el pod está en estado `Running`, pero en la columna **READY** el valor es `0/1`, lo que significa que 0 de los contenedores están listos.

@@ -6,7 +6,9 @@ Para modificar nuestro pod, es necesario eliminar ultimo desplgue del mismo, por
 kubectl delete pods my-app
 ```{{exec}}
 
-Ahora, al fin de anadir el livenessProbe, reemplazamos el contenido del archivo `pod.yaml` de la siguiente manera:
+Aquí tienes la frase corregida:
+
+Ahora, para añadir el livenessProbe, reemplazamos el contenido del archivo `pod.yaml` de la siguiente manera:
 
 ```yaml
 apiVersion: v1
