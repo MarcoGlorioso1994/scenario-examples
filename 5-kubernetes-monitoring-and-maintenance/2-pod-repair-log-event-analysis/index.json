@@ -9,8 +9,7 @@
     "steps": [
       {
         "title": "Despliegue de una aplicación con un fallo simulado en un contenedor",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step1/text.md"
       },
       {
         "title": "Investigación sobre el fallo del contenedor, utilizando Logs y Eventos Kubernetes",

@@ -9,8 +9,7 @@
     "steps": [
       {
         "title": "Despliegue de una ConfigMap, un Secret y un aplicación",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step1/text.md"
       },
       {
         "title": "Simulación de un fallo en la configuracion entre aplicación y la ConfigMap",

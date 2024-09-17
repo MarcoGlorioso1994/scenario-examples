@@ -9,8 +9,7 @@
     "steps": [
       {
         "title": "Despliegue de una PVC y de un Pod",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step1/text.md"
       },
       {
         "title": "Investigación del fallo por la falta de una StorageClass",

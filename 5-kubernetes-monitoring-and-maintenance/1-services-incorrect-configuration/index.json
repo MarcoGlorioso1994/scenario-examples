@@ -9,8 +9,7 @@
     "steps": [
       {
         "title": "Despliegue de una aplicación y de un servicio mal configurado",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step1/text.md"
       },
       {
         "title": "Investigación sobre la conectividad incorrecta entre aplicación y servicio",
