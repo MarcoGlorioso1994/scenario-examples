@@ -8,7 +8,6 @@ kind: ConfigMap
 metadata:
   name: my-config
 data:
-  APP_MODE: "production"
   LOG_LEVEL: "debug"
 ```{{copy}}
 
@@ -41,7 +40,7 @@ spec:
     - name: APP_MODE
       valueFrom:
         configMapKeyRef:
-          name: my-config
+          name: my-config 
           key: APP_MODE
     - name: LOG_LEVEL
       valueFrom:
@@ -66,8 +65,7 @@ kubectl apply -f secret.yaml
 kubectl apply -f pod.yaml
 ```{{exec}}
 
-Verificamos que el pod esté en ejecución:
-
+Verificamos si el pod se ha desplegado correctamente. Desafortunadamente, el pod presenta un error de configuración:
 ```bash
 kubectl get pods
 ```{{exec}}

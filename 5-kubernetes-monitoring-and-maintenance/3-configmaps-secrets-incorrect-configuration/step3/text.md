@@ -1,18 +1,12 @@
-Para corregir el problema, restaura la configuración correcta del ConfigMap. Asegúrate de que el nombre del ConfigMap sea `my-config`, que es el valor utilizado en la definición del pod en los campos `configMapKeyRef`.
+Para corregir el problema, necesitamos anadir la pareja clave/valor que esta faltando en la ConfigMap. 
 
-Restauramos el archivo configmap.yaml con la configuración correcta y vuelve a aplicarlo:
+Anadimos el siguiente codigo en la seccion data en el archivo configmap.yaml:
 
 ```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: my-config
-data:
-  APP_MODE: "production"
-  LOG_LEVEL: "debug"
+APP_MODE: "production"
 ```{{copy}}
 
-Aplicamos los cambios:
+Actualizamos la ConfigMap:
 
 ```bash
 kubectl apply -f configmap.yaml

@@ -1,6 +1,6 @@
 {
   "title": "Aplicación con Configmaps y Secrets mal configurado",
-  "description": "Despliegue de una aplicación, investigación del fallo utilizando ConfigMap y Secrets",
+  "description": "Despliegue de una aplicación con ConfigMap y Secrets, investigación del fallo y solución",
   "details": {
     "intro": {
       "title": "Introducción",
@@ -12,11 +12,11 @@
         "text": "step1/text.md"
       },
       {
-        "title": "Simulación de un fallo en la configuracion entre aplicación y la ConfigMap",
+        "title": "Investigación del fallo de configuración entre la aplicación y el ConfigMap",
         "text": "step2/text.md"
       },
       {
-        "title": "Solución del fallo ajustando la configuración",
+        "title": "Solución del fallo ajustando la ConfigMap",
         "text": "step3/text.md"
       },
       {
