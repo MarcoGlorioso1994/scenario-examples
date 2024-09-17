@@ -4,7 +4,7 @@ Seguimos visualizando los eventos relacionados con el pod:
 
 ```bash
 kubectl describe pod <nombre-del-pod>
-```{{exec}}
+```{{copy}}
 
 Bajo la sección de `Events`, verás detalles sobre el fallo del contenedor. Deberías encontrar mensajes como `Back-off restarting failed container` o `Error` que indican que el contenedor ha estado fallando y Kubernetes está tratando de reiniciarlo repetidamente.
 
