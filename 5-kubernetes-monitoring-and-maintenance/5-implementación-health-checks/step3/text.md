@@ -1,10 +1,10 @@
 Después de eliminar el contenido del directorio /html, el probe de readiness seguramente ha fallado.
 
-Verificamos los eventos del pod:
+Verificamos los eventos del pod(nota: Ejecuta el comando `exit` para salir de la shell del contenedor):
 
 ```bash
 kubectl describe pod my-app
-```{{copy}}
+```{{exec}}
 
 Bajo la sección de Events, deberíamos encontrar mensajes como "Readiness probe failed: HTTP probe failed with status code: 403" o Error, que indican que el probe de readiness está fallando al ejecutar una solicitud HTTP GET a la raíz / del servidor web nginx. Como se mencionó anteriormente, Kubernetes deja de enviar tráfico al contenedor, pero no lo reinicia.
 

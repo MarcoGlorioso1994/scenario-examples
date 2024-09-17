@@ -8,7 +8,7 @@
     },
     "steps": [
       {
-        "title": "Despliegue de una aplicación con livenessProbe y readinessProbe",
+        "title": "Despliegue de una aplicación con readinessProbe",
         "text": "step1/text.md"
       },
       {
@@ -16,13 +16,21 @@
         "text": "step2/text.md"
       },
       {
-        "title": "Análisis el comportamiento de los probes",
+        "title": "Análisis del comportamiento de la aplicación con readinessProbe",
         "text": "step3/text.md"
       },
       {
-        "title": "Solución del fallo",
+        "title": "Despliegue de una aplicación con livenessProbe y readinessProbe",
         "text": "step4/text.md"
-      }   
+      },
+      {
+        "title": "Simulación de un fallo en la aplicación con livenessProbe y readinessProbe",
+        "text": "step5/text.md"
+      },
+      {
+        "title": "Análisis del comportamiento de la aplicación con livenessProbe y readinessProbe",
+        "text": "step6/text.md"
+      }         
     ],
     "finish": {
       "title": "👏 Buen trabajo!",

@@ -4,7 +4,7 @@ Accedemos al contenedor:
 
 ```bash
 kubectl exec -it my-app -- //bin/bash
-```{{copy}}
+```{{exec}}
 
 Dentro del contenedor, vamos a eliminar el archivo de configuración de nginx para simular un fallo:
 

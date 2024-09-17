@@ -14,4 +14,4 @@ Verificamos el estado del pod:
 kubectl get pods my-app
 ```{{copy}}
 
-Podemos ver cómo el pod está en estado Running, pero en la columna **READY** el valor es `1/1`, lo que significa que el contenedor está correctamente desplegado y listo para responder a nuestras solicitudes HTTP.
+Podemos ver cómo el pod está en estado `Running`, en la columna **READY** el valor es `1/1`, pero en la columna **RESTARTS** el valor es `1`. Esto nos muestra cómo Kubernetes ha reiniciado el contenedor y que ahora está correctamente desplegado y listo para responder a nuestras solicitudes HTTP.

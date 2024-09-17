@@ -7,4 +7,3 @@ kubectl exec -it my-app -- //bin/bash -c "rm -rf \/usr\/share\/nginx\/html\/*"
 ```{{copy}}
 
 Esto simula un fallo en el servidor nginx, ya que no tendrá contenido para servir en el endpoint /.
-

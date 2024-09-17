@@ -1,4 +1,4 @@
-Ahora podemos anadir un livenessProbe a nuestro pod para ver como kubernetes reaciona a un fallo en precensa de un livenessProbe.
+Ahora podemos anadir un `livenessProbe` a nuestro pod para ver como Kubernetes reaciona a un fallo en precensa de un livenessProbe.
 
 Para modificar nuestro pod, es necesario eliminar ultimo desplgue del mismo, porque estos cambios no estan includos en las possible modificas de un pod ya deplegado. Eliminamos el pod con el siguiente comando:
 
