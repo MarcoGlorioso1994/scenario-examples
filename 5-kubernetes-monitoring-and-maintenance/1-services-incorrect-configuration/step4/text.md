@@ -3,8 +3,12 @@ Terminemos este laboratorio comprobando que el problema de conectividad interna 
 Accedemos al contenedor:
 
 ```bash
-kubectl exec -it <nombre-del-pod> -- //bin/bash
+kubectl get pods
 ```{{exec}}
+
+```bash
+kubectl exec -it <nombre-del-pod> -- //bin/bash
+```{{copy}}
 
 Dentro del contenedor, ejecutamos una segunda solicitud curl al servicio a través del nombre DNS del servicio:
 

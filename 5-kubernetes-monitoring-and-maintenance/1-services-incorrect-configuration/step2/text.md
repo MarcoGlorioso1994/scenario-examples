@@ -10,7 +10,7 @@ Accedemos al contenedor:
 
 ```bash
 kubectl exec -it <nombre-del-pod> -- //bin/bash
-```{{exec}}
+```{{copy}}
 
 Dentro del contenedor, intentamos a hacer una solicitud curl al servicio a través del nombre DNS del servicio:
 

@@ -52,9 +52,3 @@ kubectl get deployments
 ```bash
 kubectl get services
 ```{{exec}}
-
-Ademas, podemos observar el estado del pod con el siguiente comando:
-
-```bash
-kubectl describe pod <nombre-del-pod>
-```{{exec}}
