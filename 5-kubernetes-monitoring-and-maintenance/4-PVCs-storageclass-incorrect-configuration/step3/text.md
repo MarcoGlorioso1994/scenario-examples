@@ -53,7 +53,9 @@ spec:
 
 Para solucionar el fallo, es necesario eliminar el PersistentVolumeClaim precedente porque es un recurso inmutable. Eliminamos el PVC con el siguiente comando:
 
+```bash
 k delete pvc my-pvc
+```{{exec}}
 
 Ahora podemos aplicar el archivo actualizado para crear el PVC y actualizar el pod (nota: el pod no se crea nuevo, simplemente se actualiza): 
 
