@@ -1,20 +1,33 @@
-Ahora, vamos a simular un error en la configuración. Modificaremos el ConfigMap o el Secret de forma que el pod no pueda obtener la configuración correctamente. Por ejemplo, cambiaremos el nombre del ConfigMap en el archivo del pod o eliminaremos la clave del Secret.
+Ahora, vamos a simular un error en la configuración. Modificaremos el ConfigMap o el Secret de forma que el pod no pueda obtener la configuración correctamente. Por ejemplo, cambiaremos el nombre del ConfigMap en el archivo del pod.
 
-Ejecutaremos los siguientes pasos:
-
-- Modificar el ConfigMap: cambiaremos el nombre del ConfigMap o eliminaremos una de las claves dentro del archivo configmap.yaml.
-- Actualizaremos el ConfigMap.
-
-Vamos a modificar el nombre de nuestro ConfigMap; reemplazaremos el código dentro del archivo `configmap.yaml` con el siguiente código:
+Vamos a modificar el nombre de nuestro ConfigMap en el fichero del pod; reemplazaremos el código dentro del archivo `pod.yaml` con el siguiente código:
 
 ```yaml
 apiVersion: v1
-kind: ConfigMap
+kind: Pod
 metadata:
-  name: my-wrong-config  # Cambiado el nombre
-data:
-  APP_MODE: "production"
-  LOG_LEVEL: "debug"
+  name: my-config-secret-pod
+spec:
+  containers:
+  - name: my-app
+    image: busybox
+    command: ['sh', '-c', 'while true; do echo APP_MODE=$APP_MODE; echo LOG_LEVEL=$LOG_LEVEL; echo DB_PASSWORD=$DB_PASSWORD; sleep 10; done']
+    env:
+    - name: APP_MODE
+      valueFrom:
+        configMapKeyRef:
+          name: new-config-name  # Nombre diferente
+          key: APP_MODE
+    - name: LOG_LEVEL
+      valueFrom:
+        configMapKeyRef:
+          name: new-config-name  # Nombre diferente
+          key: LOG_LEVEL
+    - name: DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: my-secret
+          key: DB_PASSWORD
 ```{{copy}}
 
 Aplicamos los cambios:
