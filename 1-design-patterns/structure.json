@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "path": "1-declarative-resilient-deployments" },
+    { "path": "2-daemon-singleton-service" },
+    { "path": "3-sidecars-initcontainers" },
+    { "path": "4-securitycontexts" },
+    { "path": "5-networkpolicies" }
+  ]
+}

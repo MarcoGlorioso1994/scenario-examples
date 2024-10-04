@@ -1,0 +1,1 @@
+¡Felicidades! Has completado el laboratorio sobre **Deployments Declarativos y Resilientes en Kubernetes**. Ahora sabes cómo definir un Deployment, escalar aplicaciones, manejar actualizaciones sin interrupciones y gestionar fallos mediante rollbacks. Estos conceptos son esenciales para garantizar la alta disponibilidad y resiliencia de tus aplicaciones en Kubernetes.

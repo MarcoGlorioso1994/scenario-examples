@@ -1,0 +1,40 @@
+{
+  "title": "Deployments Declarativos y Resilientes en Kubernetes",
+  "description": "Aprende a gestionar aplicaciones con Kubernetes usando Deployments declarativos, escalabilidad y resiliencia.",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Crear un Deployment",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Escalar el Deployment",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Rolling Update",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Rollback de un Deployment",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Resiliencia del Deployment",
+        "text": "step5/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

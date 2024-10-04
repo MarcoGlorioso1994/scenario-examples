@@ -1,0 +1,32 @@
+{
+  "title": "SecurityContexts en Kubernetes",
+  "description": "Aprende a utilizar los SecurityContexts en Kubernetes para mejorar la seguridad de Pods y contenedores.",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Aplicando SecurityContexts a los Pods",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Aplicando SecurityContexts a los Contenedores",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Probando el sistema de archivos de solo lectura",
+        "text": "step3/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

@@ -1,0 +1,1 @@
+¡Enhorabuena! Has completado el laboratorio sobre **Network Policies en Kubernetes**. Ahora entiendes cómo crear y aplicar políticas de red para restringir el tráfico entre Pods, y cómo estas herramientas son fundamentales para asegurar y gestionar la comunicación en un clúster de Kubernetes.

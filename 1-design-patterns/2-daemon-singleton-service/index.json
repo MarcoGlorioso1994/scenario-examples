@@ -1,0 +1,28 @@
+{
+  "title": "DaemonSet y Singleton en Kubernetes",
+  "description": "Aprende a crear y gestionar DaemonSets y Pods Singleton en Kubernetes.",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Crear un DaemonSet",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Crear un Pod Singleton",
+        "text": "step2/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

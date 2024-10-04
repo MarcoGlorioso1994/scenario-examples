@@ -1,0 +1,1 @@
+¡Felicidades! Has aprendido cómo aplicar SecurityContexts en Kubernetes para ejecutar contenedores de manera más segura, prevenir escalada de privilegios y proteger el sistema de archivos. Estas habilidades son clave para desplegar aplicaciones seguras en Kubernetes.

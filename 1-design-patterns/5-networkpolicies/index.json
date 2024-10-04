@@ -1,0 +1,32 @@
+{
+  "title": "Network Policies en Kubernetes",
+  "description": "Aprende a crear y aplicar Network Policies en Kubernetes.",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Desplegar el Pod Nginx",
+        "text": "step1.md"
+      },
+      {
+        "title": "Crear una Política de Red",
+        "text": "step2.md"
+      },
+      {
+        "title": "Probar Network Policy",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
