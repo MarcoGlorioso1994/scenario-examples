@@ -1,0 +1,32 @@
+{
+  "title": "InitContainers y Sidecars en Kubernetes",
+  "description": "Aprende a trabajar con InitContainers y Sidecars en Kubernetes",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Configurar InitContainer con Volumen Compartido",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Configurar Sidecar para Logging Centralizado",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Simular Fallos en InitContainers",
+        "text": "step3/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

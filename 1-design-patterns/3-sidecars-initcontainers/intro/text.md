@@ -1,0 +1,1 @@
+En este laboratorio, aprenderás a utilizar **InitContainers y Sidecars** en Kubernetes. Los InitContainers se ejecutan antes que el contenedor principal para realizar tareas de inicialización, mientras que los Sidecars complementan al contenedor principal al proporcionar servicios adicionales, como logging o funciones de proxy.

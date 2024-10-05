@@ -1,0 +1,1 @@
+¡Bien hecho! Ahora sabes cómo usar InitContainers para inicialización y Sidecars para extender la funcionalidad de tus Pods en Kubernetes. Estos patrones te ayudarán a mejorar la eficiencia y flexibilidad de tus aplicaciones.

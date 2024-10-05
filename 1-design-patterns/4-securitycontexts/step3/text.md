@@ -4,17 +4,17 @@ Para ello, creamos el archivo `readonly-filesystem.yaml` y añadimos el siguient
 
 ```yaml
 apiVersion: v1
-   kind: Pod
-   metadata:
-     name: readonly-pod
-   spec:
-     containers:
-     - name: nginx
-       image: nginx:latest
-       securityContext:
-         readOnlyRootFilesystem: true   # Forzar el sistema de archivos de solo lectura
-       ports:
-       - containerPort: 80
+kind: Pod
+metadata:
+  name: readonly-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    securityContext:
+      readOnlyRootFilesystem: true   # Forzar el sistema de archivos de solo lectura
+    ports:
+    - containerPort: 80
 ```{{copy}}
 
 Ahora podemos aplicar el manifiesto para crear el Pod con el contenedor con su SecurityContext:
