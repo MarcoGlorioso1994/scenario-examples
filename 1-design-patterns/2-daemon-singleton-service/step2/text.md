@@ -27,12 +27,13 @@ spec:
 Ahora podemos desplegar nuestra aplicación **Singleton** ejecutando el siguiente comando:
 
 ```bash
-kubectl scale deployment nginx-singleton
+kubectl apply -f nginx-singleton.yaml 
 ```{{exec}}
 
 Verificamos que el Pod Singleton esté corriendo listando los Pods:
 
 ```bash
+kubectl get deployments
 kubectl get pods
 ```{{exec}}
 
