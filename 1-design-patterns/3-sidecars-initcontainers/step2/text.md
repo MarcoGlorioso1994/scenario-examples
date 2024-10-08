@@ -45,13 +45,27 @@ kubectl get pods
 Para revisar los logs generados por el contenedor principal y recopilados por el Sidecar, ejecuta el siguiente comando:
 
 ```bash
-kubectl logs sidecar-logging-demo -c main-container
+k exec -it sidecar-logging-demo -c main-container -- //bin/bash
 ```{{exec}}
 
-Para revisar los logs del Sidecar, puedes utilizar:
+Dentro del contenedor principal, puedes acceder a los archivos en el directorio `/var/log/nginx`:
+ 
+```bash
+cd /var/log/nginx
+```{{exec}}
+
+Encontrarás dos archivos de log: `access.log` y `error.log`. Estos son los archivos que Nginx utiliza para guardar sus registros.
+
+Para revisar los logs del Sidecar, conéctate al contenedor Sidecar:
 
 ```bash
-kubectl logs sidecar-logging-demo -c sidecar-logging
+k exec -it sidecar-logging-demo -c sidecar-logging -- //bin/sh
 ```{{exec}}
 
-Esto te dará una visión completa de la interacción entre ambos contenedores.
+Luego, analiza los archivos en el directorio `/data`:
+
+```bash
+cd /data
+```{{exec}}
+
+Aquí encontrarás los archivos `logs_access.txt` y `logs_error.txt`, que son la recopilación de los logs generados por Nginx en el directorio `/var/log/nginx`.
