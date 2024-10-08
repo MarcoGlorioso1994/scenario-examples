@@ -26,5 +26,9 @@ kubectl apply -f pod-initcontainer-failure.yaml
 Analizamos cómo el InitContainer falla y el Pod no se inicia. Revisamos los eventos del Pod:
 
 ```bash
+kubectl get pods
+```{{exec}}
+
+```bash
 kubectl describe pod initcontainer-failure-demo
 ```{{exec}}
