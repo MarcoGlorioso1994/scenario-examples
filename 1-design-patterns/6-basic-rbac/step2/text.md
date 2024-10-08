@@ -1,22 +1,27 @@
-A continuación, vamos a crear un `ClusterRole` para otorgar permisos a nivel de clúster. 
+Crea un **RoleBinding** para vincular el **Role** `configmap-pod-manager` con la ServiceAccount en el namespace `rbac-lab`.
 
-Crea un archivo llamado `clusterrole-secret-reader.yaml` con el siguiente contenido:
+Crea un archivo llamado `rolebinding-sa-manager.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: RoleBinding
 metadata:
-  name: secret-reader
-rules:
-- apiGroups: [""]
-  resources: ["secrets"]
-  verbs: ["get", "list"]
+  name: configmap-pod-binding
+  namespace: rbac-lab
+subjects:
+- kind: ServiceAccount
+  name: sa-manager
+  namespace: rbac-lab
+roleRef:
+  kind: Role
+  name: configmap-pod-manager
+  apiGroup: rbac.authorization.k8s.io
 ```{{copy}}
 
-Aplica el ClusterRole:
+Aplica el RoleBinding:
 
 ```bash
-kubectl apply -f clusterrole-secret-reader.yaml
+kubectl apply -f rolebinding-sa-manager.yaml
 ```{{exec}}
 
-Este ClusterRole otorga permisos para leer Secrets a nivel de clúster.
+Esto enlaza el Role `configmap-pod-manager` con la ServiceAccount `sa-manager`.

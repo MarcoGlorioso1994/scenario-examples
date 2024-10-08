@@ -9,19 +9,23 @@
     },
     "steps": [
       {
-        "title": "Crear un Role en el namespace",
+        "title": "Crear una SA y un Role en el namespace",
         "text": "step2/text.md"
       },
       {
-        "title": "Crear un ClusterRole",
-        "text": "step3/text.md"
-      },
-      {
-        "title": "Vincular Roles con RoleBindings y ClusterRoleBindings",
+        "title": "Vincular Roles con RoleBindings",
         "text": "step4/text.md"
       },
       {
-        "title": "Validar permisos",
+        "title": "Crear una SA y un ClusterRole",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Vincular ClusterRoles con ClusterRoleBindings",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Validar los permisos de las cuenta de servicios",
         "text": "step5/text.md"
       }
     ],

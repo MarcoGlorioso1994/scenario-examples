@@ -1,22 +1,26 @@
-En este paso, vamos a verificar los permisos de los dos usuarios.
+Crea un ClusterRoleBinding para vincular el ClusterRole, con acceso de lectura de Secrets a nivel de clúster, a la ServiceAccount `sa-reader`.
 
-Verifica que el usuario `usuario-lab` puede listar pods y configmaps:
+Crea un archivo llamado `clusterrolebinding-sa-reader.yaml` con el siguiente contenido:
 
-```bash
-kubectl get pods --namespace rbac-lab
-kubectl get configmaps --namespace rbac-lab
-```{{exec}}
-
-Verifica que `usuario-cluster` puede listar Secrets a nivel de clúster:
-
-```bash
-kubectl get secrets --all-namespaces
-```{{exec}}
-
-Ahora, intenta eliminar un pod usando usuario-lab (debería fallar): 
-
-```bash
-kubectl delete pod <pod-name> --namespace rbac-lab
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: secret-reader-binding
+subjects:
+- kind: ServiceAccount
+  name: sa-reader
+  namespace: rbac-lab
+roleRef:
+  kind: ClusterRole
+  name: secret-reader
+  apiGroup: rbac.authorization.k8s.io
 ```{{copy}}
 
-Si todo está configurado correctamente, usuario-lab no debería tener permisos de eliminación.
+Aplica el ClusterRoleBinding:
+
+```bash
+kubectl apply -f clusterrolebinding-sa-reader.yaml
+```{{exec}}
+
+Esto vincula el ClusterRole secret-reader con la ServiceAccount sa-reader.
