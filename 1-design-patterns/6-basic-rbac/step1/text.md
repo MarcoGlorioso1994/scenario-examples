@@ -1,4 +1,4 @@
-Primero, analizamos el fichero de configuracion de nustro cluster Kuberntes para leer la ip de nuestro API server:
+Primero, recopilamos información sobre nuestro clúster de Kubernetes.
 
 ```bash
 kubectl cluster-info
@@ -10,36 +10,33 @@ La salida se verá algo como esto:
 Kubernetes control plane is running at https://<api-server-ip>:<port>
 CoreDNS is running at https://<coredns-ip>:<port>
 ```
-Copia y guarda la url http del Kubernetes control plane porque la utilizaremos en el sigunete paso. 
+Copia y guarda la URL HTTP del plano de control de Kubernetes, ya que la utilizaremos en el siguiente paso.
 
-Hemos creado un archivo de configuracion llamado rbac.kubeconfig cluster por este laboratorio, al fin de crear unos usuarios y poder ejeutar unas pruebas durante este lab. 
+Hemos creado un archivo de configuración llamado `rbac.kubeconfig` para este laboratorio, con el fin de crear usuarios y realizar pruebas durante la sesión.
 
-Vamos a modificar el fichero rbac.kubeconfig sostituiendo el valor del campo server por el cluster con el valor que hemos guardado desde el paso anterior.
+A continuación, modificaremos el archivo `rbac.kubeconfig` sustituyendo el valor del campo `server` por la URL del clúster que hemos guardado en el paso anterior.
 
 ```bash
 vi rbac.kubeconfig
 ```{{exec}}
 
-kubectl create serviceaccount pod-amanger
-
-Comprobamos que los cambios se han guardado correctamente:
+Verificamos que los cambios se han guardado correctamente:
 
 ```bash
 kubectl config --kubeconfig=rbac.kubeconfig view
 ```{{exec}}
 
-Podemos ver que hay dos usuarios `pod-manager` y `secret-reader` con dos respectivos contextos. 
-
+Podemos observar que hay dos usuarios: `pod-manager` y `secret-reader`, cada uno con sus respectivos contextos.
 Selecionamos el contexto pod-manager-kubernetes con el siguiente comando:
 
 ```bash
 kubectl config --kubeconfig=rbac.kubeconfig use-context pod-manager-kubernetes
 ```{{exec}}
 
-Verificamos como ultimo paso inicial que usuario `pod-manager` falta de los permisos necesarios para listar los pods
+Verificamos, como último paso inicial, que el usuario `pod-manager` carece de los permisos necesarios para listar los pods.
 
 ```bash
 kubectl --kubeconfig=rbac.kubeconfig get pods
 ```{{exec}}
 
-Deberias recibir un mensaje de error contenente la palabra **Forbidden** y una explicacion que usuario non puede ver los pods por una falta de permisos. 
+Deberías recibir un mensaje de error que contenga la palabra **Forbidden** y una explicación de que el usuario no puede ver los pods debido a la falta de permisos.

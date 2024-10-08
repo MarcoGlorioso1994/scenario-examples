@@ -1,4 +1,4 @@
-Crea un **RoleBinding** para vincular el **Role** `configmap-pod-manager` con usuario `pod-manager` en el namespace `rbac-lab`.
+Crea un **RoleBinding** para vincular el **Role** `configmap-pod-manager` con el usuario `pod-manager` en el namespace `rbac-lab`.
 
 Crea un archivo llamado `rolebinding-pod-manager.yaml` con el siguiente contenido:
 
@@ -24,4 +24,4 @@ Aplica el RoleBinding:
 kubectl apply -f rolebinding-pod-manager.yaml
 ```{{exec}}
 
-Esto enlaza el Role `configmap-pod-manager` con usuario `pod-manager`.
+Esto vincula el Role `configmap-pod-manager` con el usuario `pod-manager`.

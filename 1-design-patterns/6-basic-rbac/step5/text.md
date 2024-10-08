@@ -1,4 +1,4 @@
-Crea un ClusterRoleBinding para vincular el ClusterRole, con acceso de lectura de Secrets a nivel de clúster, al usuario `secret-reader`.
+Crea un ClusterRoleBinding para vincular el ClusterRole, que otorga acceso de lectura de Secrets a nivel de clúster, al usuario `secret-reader`.
 
 Crea un archivo llamado `clusterrolebinding-secret-reader.yaml` con el siguiente contenido:
 
@@ -23,4 +23,4 @@ Aplica el ClusterRoleBinding:
 kubectl apply -f clusterrolebinding-secret-reader.yaml
 ```{{exec}}
 
-Esto vincula el ClusterRole secret-reader con usuario secret-reader.
+Esto vincula el ClusterRole `secret-reader` con el usuario `secret-reader`.

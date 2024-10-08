@@ -1,6 +1,6 @@
-Seguimos creando un Role que otorgue permisos para gestionar los Pods y los ConfigMaps dentro del namespace rbac-lab.
+Seguimos creando un Role que otorgue permisos para gestionar los Pods y los ConfigMaps dentro del namespace `rbac-lab`.
 
-Como primer paso creamos el namespace `rbac-lab`con el siguiente contenido:
+Como primer paso, creamos el namespace `rbac-lab` con el siguiente contenido:
 
 ```bash
 kubectl create namespace rbac-lab
@@ -26,4 +26,4 @@ Aplicamos el Role al clúster:
 kubectl apply -f role-configmap-pod-manager.yaml
 ```{{exec}}
 
-Este Role otorga permisos para gestionar pods y configmaps en el namespace rbac-lab por los usuarios.
+Este Role otorga permisos para gestionar Pods y ConfigMaps en el namespace `rbac-lab` a los usuarios.
