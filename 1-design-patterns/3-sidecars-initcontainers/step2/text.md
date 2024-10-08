@@ -51,7 +51,7 @@ k exec -it sidecar-logging-demo -c main-container -- //bin/bash
 Dentro del contenedor principal, puedes acceder a los archivos en el directorio `/var/log/nginx`:
  
 ```bash
-cd /var/log/nginx
+cd /var/log/nginx; ls
 ```{{exec}}
 
 Encontrarás dos archivos de log: `access.log` y `error.log`. Estos son los archivos que Nginx utiliza para guardar sus registros.
@@ -65,7 +65,7 @@ k exec -it sidecar-logging-demo -c sidecar-logging -- //bin/sh
 Luego, analiza los archivos en el directorio `/data`:
 
 ```bash
-cd /data
+cd /data; ls
 ```{{exec}}
 
 Aquí encontrarás los archivos `logs_access.txt` y `logs_error.txt`, que son la recopilación de los logs generados por Nginx en el directorio `/var/log/nginx`.
