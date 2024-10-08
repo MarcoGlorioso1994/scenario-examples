@@ -3,35 +3,52 @@ En este paso, crearás un DaemonSet que garantiza que un Pod esté ejecutándose
 Para ello, creamos el archivo `nginx-daemonset.yaml` y añadimos el siguiente código dentro del archivo:
 
 ```yaml
-aapiVersion: apps/v1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: configurator
+  name: fluentd-elasticsearch
+  namespace: kube-system
   labels:
-    k8s-app: configurator
+    k8s-app: fluentd-logging
 spec:
   selector:
     matchLabels:
-      name: configurator
+      name: fluentd-elasticsearch
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
   template:
     metadata:
       labels:
-        name: configurator
+        name: fluentd-elasticsearch
     spec:
+      tolerations:
+      # these tolerations are to have the daemonset runnable on control plane nodes
+      # remove them if your control plane nodes should not run pods
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
       containers:
-      - name: configurator
-        image: bash
-        command:
-          - sh
-          - -c
-          - 'echo aba997ac-1c89-4d64 > /mount/config && sleep 1d'
+      - name: fluentd-elasticsearch
+        image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2
         volumeMounts:
-        - name: vol
-          mountPath: /mount
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+      terminationGracePeriodSeconds: 30
       volumes:
-      - name: vol
+      - name: varlog
         hostPath:
-          path: /configurator
+          path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
 ```{{copy}}
 
 Ahora podemos desplegar el Daemonset ejecutando el siguiente comando:
