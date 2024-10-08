@@ -1,5 +1,3 @@
 #!/bin/bash
 
-helm repo list | grep "bitnami"
-
-helm get notes wordpress && helm get values wordpress && helm get manifest wordpress
+helm get notes apache && helm get values apache && helm get manifest apache
