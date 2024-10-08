@@ -37,13 +37,13 @@ kubectl get pods
 Como primer paso, nos conectamos al contenedor dentro del pod ejecutando el siguiente comando para abrir una sesión interactiva con el contenedor:
 
 ```bash
-kubectl exec -it readonly-pod  -- //bin/bash
+kubectl exec -it readonly-pod  -- //bin/sh
 ```{{exec}}
 
 Ahora que estamos conectados al contenedor, intentamos crear un archivo en su sistema de archivos ejecutando el siguiente comando:
 
 ```bash
-touch /tmp/testfile.txt
+touch /root/testfile.txt
 ```{{exec}}
 
-Este comando debería fallar, con el mensaje "touch: cannot touch '/tmp/testfile.txt': Read-only file system". Esto pasa porque hemos configurado el sistema de archivos del contenedor para que sea de solo lectura. Al intentar crear un archivo, recibirás un mensaje de error que indicará que no tienes permisos suficientes para realizar esa operación. Esto es parte del comportamiento esperado cuando se implementa un sistema de archivos de solo lectura, ya que previene cualquier modificación o escritura en el sistema de archivos del contenedor.
+Este comando debería fallar, con el mensaje "touch: /root/testfile.txt: Read-only file system". Esto pasa porque hemos configurado el sistema de archivos del contenedor para que sea de solo lectura. Al intentar crear un archivo, recibirás un mensaje de error que indicará que no tienes permisos suficientes para realizar esa operación. Esto es parte del comportamiento esperado cuando se implementa un sistema de archivos de solo lectura, ya que previene cualquier modificación o escritura en el sistema de archivos del contenedor.
