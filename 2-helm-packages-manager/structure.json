@@ -1,5 +1,6 @@
 {
   "items": [
+    { "path": "1-install-config-repo-chart" },
     { "path": "install" },
     { "path": "use" },
     { "path": "use-the-search" },
