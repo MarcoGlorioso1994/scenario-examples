@@ -10,11 +10,11 @@
     "steps": [
       {
         "title": "Crear una SA y un Role en el namespace",
-        "text": "step2/text.md"
+        "text": "step1/text.md"
       },
       {
         "title": "Vincular Roles con RoleBindings",
-        "text": "step4/text.md"
+        "text": "step2/text.md"
       },
       {
         "title": "Crear una SA y un ClusterRole",

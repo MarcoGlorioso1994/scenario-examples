@@ -10,15 +10,15 @@
     "steps": [
       {
         "title": "Desplegar el Pod Nginx",
-        "text": "step1.md"
+        "text": "step1/text.md"
       },
       {
         "title": "Crear una Política de Red",
-        "text": "step2.md"
+        "text": "step2/text.md"
       },
       {
         "title": "Probar Network Policy",
-        "text": "step3.md"
+        "text": "step3/text.md"
       }
     ],
     "finish": {
