@@ -6,7 +6,10 @@ Creamos un archivo `pod-sidecar-logging.yaml` con el siguiente contenido:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sidecar-logging-demo
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-logging-demo2
 spec:
   volumes:
     - name: shared-logs
@@ -17,6 +20,7 @@ spec:
       volumeMounts:
         - name: shared-logs
           mountPath: /var/log
+      command: ["sh", "-c", "mkdir -p /var/log/nginx && touch /var/log/nginx/access.log /var/log/nginx/error.log && nginx -g 'daemon off;'"]
     - name: sidecar-logging
       image: busybox
       command: ['sh', '-c', 'while true; do cat /var/log/nginx/access.log > /data/logs.txt; sleep 5; done']
