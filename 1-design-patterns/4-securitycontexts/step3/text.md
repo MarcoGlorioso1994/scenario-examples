@@ -9,8 +9,8 @@ metadata:
   name: readonly-pod
 spec:
   containers:
-  - name: nginx
-    image: nginx:latest
+  - name: my-app
+    image: istio/examples-bookinfo-details-v2
     securityContext:
       readOnlyRootFilesystem: true   # Forzar el sistema de archivos de solo lectura
     ports:
