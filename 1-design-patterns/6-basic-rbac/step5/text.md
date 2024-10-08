@@ -3,10 +3,27 @@ Ejecutaremos comandos para listar los Pods o leer los Secrets a nivel de clúste
 
 Verifiquemos que la cuenta de servicio `sa-manager` puede listar los Pods y los ConfigMaps en el namespace rbac-lab.
 
-Para ello, ejecuta un Pod que utilice la cuenta de servicio sa-manager.
+Para ello, ejecuta un Pod que utilice la cuenta de servicio sa-manager.Creamos un archivo YAML llamado `sa-manager-pod.yaml` con el siguiente contenido:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sa-manager-pod
+  namespace: rbac-lab
+spec:
+  serviceAccountName: sa-manager  # Aquí asignamos el ServiceAccount
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+```{{copy}}
+
+Aplicamos el manifesto por el pod:
 
 ```bash
-kubectl run sa-manager-test --rm -i --tty --serviceaccount=sa-manager --namespace=rbac-lab --image=busybox -- sh
+kubectl apply -f sa-manager-pod.yaml
 ```{{exec}}
 
 Desde dentro del pod, intenta listar pods y configmaps:

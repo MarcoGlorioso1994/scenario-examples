@@ -6,7 +6,7 @@ Ejecutamos el siguiente comando para crear un Pod de prueba:
 kubectl run test-pod --image=busybox --restart=Never -- sh -c "while true; do echo hello; sleep 5; done"
 ```{{exec}}
 
-Ahora accedemos al servicio Nginx desde el Pod de prueba:
+Ahora intentamos acceder al servicio de Nginx desde el Pod de prueba:
 
 ```bash
 kubectl exec -it test-pod -- wget -qO- <dirección IP de uno de los pods creados>
