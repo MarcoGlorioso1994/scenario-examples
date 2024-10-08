@@ -14,7 +14,7 @@ Copia y guarda la url http del Kubernetes control plane porque la utilizaremos e
 
 Hemos creado un archivo de configuracion llamado rbac.kubeconfig cluster por este laboratorio, al fin de crear unos usuarios y poder ejeutar unas pruebas durante este lab. 
 
-Vamos a modificar el fichero rbac.kubeconfig sostituiendo el valor del campo server por el cluater con el valor que has guardado desde el paso anterior.
+Vamos a modificar el fichero rbac.kubeconfig sostituiendo el valor del campo server por el cluster con el valor que hemos guardado desde el paso anterior.
 
 ```bash
 vi rbac.kubeconfig
@@ -37,7 +37,7 @@ kubectl config --kubeconfig=rbac.kubeconfig use-context pod-manager-kubernetes
 Verificamos como ultimo paso inicial que usuario `pod-manager` falta de los permisos necesarios para listar los pods
 
 ```bash
-kubectl --kubeconfig=developer.kubeconfig get pods
+kubectl --kubeconfig=rbac.kubeconfig get pods
 ```{{exec}}
 
 Deberias recibir un mensaje de error contenente la palabra **Forbidden** y una explicacion que usuario non puede ver los pods por una falta de permisos. 

@@ -9,7 +9,7 @@ metadata:
   name: configmap-pod-binding
   namespace: rbac-lab
 subjects:
-- kind: user
+- kind: User
   name: pod-manager
   namespace: rbac-lab
 roleRef:

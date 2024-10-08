@@ -1,4 +1,11 @@
 Seguimos creando un Role que otorgue permisos para gestionar los Pods y los ConfigMaps dentro del namespace rbac-lab.
+
+Como primer paso creamos el namespace `rbac-lab`con el siguiente contenido:
+
+```bash
+kubectl create namespace rbac-lab
+```{{exec}}
+
 Creamos un archivo YAML llamado `role-configmap-pod-manager.yaml` con el siguiente contenido:
 
 ```yaml

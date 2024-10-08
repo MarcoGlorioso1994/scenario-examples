@@ -8,7 +8,7 @@ kind: ClusterRoleBinding
 metadata:
   name: secret-reader-binding
 subjects:
-- kind: user
+- kind: User
   name: secret-reader
   namespace: rbac-lab
 roleRef:
