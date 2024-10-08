@@ -1,0 +1,59 @@
+{
+  "title": "Instalación y configuración de Helm con un Chart existente",
+  "description": "Aprende a instalar y configurar Helm en un clúster de Kubernetes con la instalación de un chart existente.",
+  
+  "details": {
+    "assets": {
+      "host01": [
+        {"file": "init.sh", "target": "/ks", "chmod": "+x"},
+        {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
+        {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "background": "init/background.sh",
+      "foreground": "init/foreground.sh",
+      "credits": ""
+    },
+    "steps": [
+      {
+        "title": "Verifica Helm",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh",
+        "hint": "Verifica que Helm esté instalado ejecutando 'helm version'."
+      },
+      {
+        "title": "Agrega un repositorio de Helm y busca un chart en ese",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh",
+        "hint": "Utiliza el comando 'helm repo add' para agregar el repositorio de Bitnami."
+      },
+      {
+        "title": "Instalar aplicación con Helm y descargar un chart específico",
+       "text": "step3/text.md",
+        "verify": "step3/verify.sh",
+        "hint": "Instala el chart de Apache utilizando 'helm install'."
+      },
+      {
+        "title": "Obtener detalles de un Chart",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh",
+        "hint": "Utiliza el comando 'helm get' para obtener los detalles del despliegue."
+      },
+      {
+        "title": "Rollback de una aplicación",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh",
+        "hint": "Usa 'helm rollback' para regresar la aplicación a una versión anterior."
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
+

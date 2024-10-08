@@ -1,0 +1,1 @@
+En este laboratorio aprenderás a usar Helm para instalar y configurar aplicaciones en Kubernetes. A lo largo de este ejercicio, instalaremos y gestionaremos aplicaciones utilizando varios comandos de Helm.
