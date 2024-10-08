@@ -24,6 +24,8 @@ spec:
         - containerPort: 80
 ```{{copy}}
 
+Ahora podemos desplegar nuestra aplicación **Singleton** ejecutando el siguiente comando:
+
 ```bash
 kubectl scale deployment nginx-singleton
 ```{{exec}}
