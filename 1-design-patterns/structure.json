@@ -4,6 +4,7 @@
     { "path": "2-daemon-singleton-service" },
     { "path": "3-sidecars-initcontainers" },
     { "path": "4-securitycontexts" },
-    { "path": "5-networkpolicies" }
+    { "path": "5-networkpolicies" },
+    { "path": "6-basic-rbac" }
   ]
 }

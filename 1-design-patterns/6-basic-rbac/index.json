@@ -1,0 +1,36 @@
+{
+  "title": "RBAC en Kubernetes",
+  "description": "Aprende a configurar y gestionar permisos usando RBAC en Kubernetes.",
+  "difficulty": "intermediate",
+  "details": {
+    "intro": {
+      "title": "Introducción",
+      "text": "intro/text.md"
+    },
+    "steps": [
+      {
+        "title": "Crear un Role en el namespace",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Crear un ClusterRole",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Vincular Roles con RoleBindings y ClusterRoleBindings",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Validar permisos",
+        "text": "step5/text.md"
+      }
+    ],
+    "finish": {
+      "title": "👏 Buen trabajo!",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
