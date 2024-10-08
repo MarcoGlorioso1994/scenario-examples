@@ -8,18 +8,14 @@ kind: Pod
 metadata:
   name: secure-container
 spec:
+  securityContext:
+    runAsUser: 1000
   containers:
-  - name: my-app
-    image: istio/examples-bookinfo-details-v2
+  - name: sec-ctx-demo-2
+    image: gcr.io/google-samples/hello-app:2.0
     securityContext:
-      runAsNonRoot: true             # Asegurar que no se ejecute como root
-      allowPrivilegeEscalation: false # Bloquear la escalada de privilegios
-      capabilities:
-        drop:                        # Eliminar capacidades adicionales
-        - NET_ADMIN
-        - SYS_TIME
-    ports:
-    - containerPort: 80
+      runAsUser: 2000
+      allowPrivilegeEscalation: false
 ```{{copy}}
 
 Ahora podemos aplicar el manifiesto para crear el Pod con el contenedor con su SecurityContext:
@@ -34,9 +30,10 @@ Comprobamos que el Pod está en ejecución:
 kubectl get pods
 ```{{exec}}
 
-Inspecciona el Pod para ver su SecurityContext:
+Nos conectamos el container para la configuracion que hemos aplicado:
 
 ```bash
-kubectl describe pod secure-container
-kubectl exec -it secure-pod -- id
+kubectl exec -it secure-container -- //bin/sh -c "ps aux"
 ```{{exec}}
+
+La salida muestra que los procesos se están ejecutando como el usuario 2000. Este es el valor de `runAsUser` especificado para el Contenedor. Sobrescribe el valor 1000 que está especificado para el Pod.

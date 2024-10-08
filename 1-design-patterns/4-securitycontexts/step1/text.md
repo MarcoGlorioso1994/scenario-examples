@@ -9,14 +9,22 @@ metadata:
   name: secure-pod
 spec:
   securityContext:
-    runAsUser: 1000           # Ejecutar como usuario no root
-    runAsGroup: 3000          # Definir grupo
-    fsGroup: 2000             # Grupo con permisos en el sistema de archivos
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+    supplementalGroups: [4000]
+  volumes:
+  - name: sec-ctx-vol
+    emptyDir: {}
   containers:
-  - name: my-app
-    image: istio/examples-bookinfo-details-v2
-    ports:
-      - containerPort: 9080
+  - name: sec-ctx-demo
+    image: busybox:1.28
+    command: [ "sh", "-c", "sleep 1h" ]
+    volumeMounts:
+    - name: sec-ctx-vol
+      mountPath: /data/demo
+    securityContext:
+      allowPrivilegeEscalation: false
 ```{{copy}}
 
 Ahora podemos aplicar el manifiesto para crear el Pod:

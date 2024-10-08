@@ -9,12 +9,17 @@ metadata:
   name: readonly-pod
 spec:
   containers:
-  - name: my-app
-    image: istio/examples-bookinfo-details-v2
+  - name: sec-ctx-demo
+    image: busybox:1.28
+    command: [ "sh", "-c", "sleep 1h" ]
+    volumeMounts:
+    - name: tmp
+      mountPath: /tmp
     securityContext:
-      readOnlyRootFilesystem: true   # Forzar el sistema de archivos de solo lectura
-    ports:
-    - containerPort: 80
+      readOnlyRootFilesystem: true
+  volumes:
+  - name: tmp
+    emptyDir: {}
 ```{{copy}}
 
 Ahora podemos aplicar el manifiesto para crear el Pod con el contenedor con su SecurityContext:
