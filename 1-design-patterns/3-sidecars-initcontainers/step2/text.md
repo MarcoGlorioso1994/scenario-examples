@@ -56,7 +56,7 @@ cd /var/log/nginx; ls
 
 Encontrarás dos archivos de log: `access.log` y `error.log`. Estos son los archivos que Nginx utiliza para guardar sus registros.
 
-Para revisar los logs del Sidecar, conéctate al contenedor Sidecar:
+Sal del contenedor principal y revisa los logs del Sidecar conectándote al contenedor Sidecar:
 
 ```bash
 k exec -it sidecar-logging-demo -c sidecar-logging -- //bin/sh
