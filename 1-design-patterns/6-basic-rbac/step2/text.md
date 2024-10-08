@@ -9,8 +9,8 @@ metadata:
   name: configmap-pod-binding
   namespace: rbac-lab
 subjects:
-- kind: ServiceAccount
-  name: sa-manager
+- kind: user
+  name: pod-manager
   namespace: rbac-lab
 roleRef:
   kind: Role
@@ -21,7 +21,7 @@ roleRef:
 Aplica el RoleBinding:
 
 ```bash
-kubectl apply -f rolebinding-sa-manager.yaml
+kubectl apply -f rolebinding-manager.yaml
 ```{{exec}}
 
 Esto enlaza el Role `configmap-pod-manager` con la ServiceAccount `sa-manager`.
