@@ -1,10 +1,16 @@
 Primero, analizamos el fichero de configuracion de nustro cluster Kuberntes para leer la ip de nuestro API server:
 
 ```bash
-kubectl config view
+kubectl cluster-info
 ```{{exec}}
 
-Copia y guarda la url del de API Server dentro en cluster Kubernetes. 
+La salida se verá algo como esto:
+
+```bash
+Kubernetes control plane is running at https://<api-server-ip>:<port>
+CoreDNS is running at https://<coredns-ip>:<port>
+```
+Copia y guarda la url http del Kubernetes control plane porque la utilizaremos en el sigunete paso. 
 
 Hemos creado un archivo de configuracion llamado rbac.kubeconfig cluster por este laboratorio, al fin de crear unos usuarios y poder ejeutar unas pruebas durante este lab. 
 
