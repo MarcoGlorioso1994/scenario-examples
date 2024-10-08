@@ -6,17 +6,21 @@ Para ello, creamos el archivo `nginx-daemonset.yaml` y a√±adimos el siguiente c√
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: nginx-daemonset
+  name: fluentd-elasticsearch
   labels:
-    app: nginx
+    k8s-app: fluentd-logging
 spec:
   selector:
     matchLabels:
-      app: nginx
+      name: fluentd-elasticsearch
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
   template:
     metadata:
       labels:
-        app: nginx
+        name: fluentd-elasticsearch
     spec:
       tolerations:
       # these tolerations are to have the daemonset runnable on control plane nodes
@@ -28,10 +32,22 @@ spec:
         operator: Exists
         effect: NoSchedule
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+      - name: fluentd-elasticsearch
+        image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
 ```{{copy}}
 
 Ahora podemos desplegar el Daemonset ejecutando el siguiente comando:
