@@ -35,15 +35,3 @@ helm history mi-aplicacion-v2
 ```{{exec}}
 
 Podemos observar que hay tres revisiones diferentes en los siguientes estados: `superseded`, `failed` y `deployed`. La revisión `deployed` es la que actualmente está desplegada en el clúster de Kubernetes.
-
-Entonces, una `release` es una instancia de un chart que ha sido instalada en un clúster de Kubernetes utilizando Helm. Representa una implementación concreta de una aplicación en el clúster, basada en un chart (paquete de Helm) y configurada con valores específicos.
-
-Un release se gestiona a través de comandos como `helm install`, `helm upgrade` y `helm uninstall`.
-
-Resulta interesante observar el paralelismo en el clúster ejecutando el siguiente comando:
-
-```bash
-kubectl get pods
-```{{exec}}
-
-Deberías ver tres pods desplegados que siguen la nomenclatura de las releases.
