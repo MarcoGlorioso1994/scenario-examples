@@ -37,6 +37,12 @@ Inspecciona el Pod para ver su SecurityContext:
 kubectl get pod secure-pod -o yaml
 ```{{exec}}
 
+Comprobamos que los valores del securityContext han sido cargados correctamente:
+
+```bash
+kubectl exec -it secure-pod -- id
+```{{exec}}
+
 Descripción de la configuración:
 
 **runAsUser** : 1000 

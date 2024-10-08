@@ -9,9 +9,10 @@ metadata:
   name: secure-container
 spec:
   containers:
-  - name: nginx
-    image: nginx:latest
+  - name: my-app
+    image: istio/examples-bookinfo-details-v2
     securityContext:
+      runAsNonRoot: true             # Asegurar que no se ejecute como root
       allowPrivilegeEscalation: false # Bloquear la escalada de privilegios
       capabilities:
         drop:                        # Eliminar capacidades adicionales
@@ -37,4 +38,5 @@ Inspecciona el Pod para ver su SecurityContext:
 
 ```bash
 kubectl describe pod secure-container
+kubectl exec -it secure-pod -- id
 ```{{exec}}
