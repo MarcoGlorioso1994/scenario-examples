@@ -3,26 +3,35 @@ En este paso, crearás un DaemonSet que garantiza que un Pod esté ejecutándose
 Para ello, creamos el archivo `nginx-daemonset.yaml` y añadimos el siguiente código dentro del archivo:
 
 ```yaml
-apiVersion: apps/v1
+aapiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: nginx-daemonset
+  name: configurator
   labels:
-    app: nginx
+    k8s-app: configurator
 spec:
   selector:
     matchLabels:
-      app: nginx
+      name: configurator
   template:
     metadata:
       labels:
-        app: nginx
+        name: configurator
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+      - name: configurator
+        image: bash
+        command:
+          - sh
+          - -c
+          - 'echo aba997ac-1c89-4d64 > /mount/config && sleep 1d'
+        volumeMounts:
+        - name: vol
+          mountPath: /mount
+      volumes:
+      - name: vol
+        hostPath:
+          path: /configurator
 ```{{copy}}
 
 Ahora podemos desplegar el Daemonset ejecutando el siguiente comando:
