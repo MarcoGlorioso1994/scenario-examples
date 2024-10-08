@@ -9,7 +9,7 @@ kubectl run test-pod --image=busybox --restart=Never -- sh -c "while true; do ec
 Ahora accedemos al servicio Nginx desde el Pod de prueba:
 
 ```bash
-kubectl exec -it test-pod -- wget -qO- nginx
-```{{exec}}
+kubectl exec -it test-pod -- wget -qO- <dirección IP de uno de los pods creados>
+```{{copy}}
 
 Este comando debería fallar porque la política de red está configurada para bloquear el tráfico desde cualquier pod que no tenga la etiqueta `app: nginx`. Esto garantiza que solo los pods etiquetados con `app: nginx` puedan comunicarse con otros recursos, limitando el acceso para mejorar la seguridad y control de tráfico en el clúster.
