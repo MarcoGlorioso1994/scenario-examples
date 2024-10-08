@@ -6,14 +6,8 @@ Creamos un archivo `pod-sidecar-logging.yaml` con el siguiente contenido:
 apiVersion: v1
 kind: Pod
 metadata:
-apiVersion: v1
-kind: Pod
-metadata:
-  name: sidecar-logging-demo2
+  name: sidecar-logging-demo
 spec:
-  volumes:
-    - name: shared-logs
-      emptyDir: {}
   containers:
     - name: main-container
       image: nginx
@@ -23,12 +17,17 @@ spec:
       command: ["sh", "-c", "mkdir -p /var/log/nginx && touch /var/log/nginx/access.log /var/log/nginx/error.log && nginx -g 'daemon off;'"]
     - name: sidecar-logging
       image: busybox
-      command: ['sh', '-c', 'while true; do cat /var/log/nginx/access.log > /data/logs.txt; sleep 5; done']
+      command: ['sh', '-c', 'while true; do cat /var/log/nginx/access.log > /data/logs_access.txt; cat /var/log/nginx/error.log > /data/logs_error.txt; sleep 5; done']
       volumeMounts:
         - name: shared-logs
           mountPath: /var/log
-        - name: shared-logs
+        - name: collected-logs
           mountPath: /data
+  volumes:
+    - name: shared-logs
+      emptyDir: {}
+    - name: collected-logs
+      emptyDir: {}
 ```{{copy}}
 
 Ahora podemos aplicar el manifiesto para crear el Pod principal y el Pod Sidecar:
