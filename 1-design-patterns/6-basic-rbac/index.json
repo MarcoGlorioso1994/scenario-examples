@@ -32,6 +32,9 @@
     "finish": {
       "title": "👏 Buen trabajo!",
       "text": "finish/text.md"
+    },
+    "assets": {
+      "host01": [{ "file": "developer.kubeconfig", "target": "/root" }]
     }
   },
   "backend": {
