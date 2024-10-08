@@ -12,7 +12,6 @@ spec:
   - name: nginx
     image: nginx:latest
     securityContext:
-      runAsNonRoot: true             # Asegurar que no se ejecute como root
       allowPrivilegeEscalation: false # Bloquear la escalada de privilegios
       capabilities:
         drop:                        # Eliminar capacidades adicionales
