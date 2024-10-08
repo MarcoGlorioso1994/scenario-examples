@@ -6,7 +6,7 @@ Creamos un archivo `container-securitycontext.yaml` con el siguiente contenido:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: secure-pod
+  name: secure-container
 spec:
   securityContext:
     runAsUser: 1000
