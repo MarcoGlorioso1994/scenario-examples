@@ -20,6 +20,8 @@ Vamos a modificar el fichero rbac.kubeconfig sostituiendo el valor del campo ser
 vi rbac.kubeconfig
 ```{{exec}}
 
+kubectl create serviceaccount pod-amanger
+
 Comprobamos que los cambios se han guardado correctamente:
 
 ```bash
