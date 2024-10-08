@@ -34,7 +34,7 @@
       "text": "finish/text.md"
     },
     "assets": {
-      "host01": [{ "file": "sample-js-app/**/*.*", "target": "/root" }]
+      "host01": [{ "file": "config/*.*", "target": "/root" }]
     }
   },
   "backend": {
