@@ -1,40 +1,37 @@
-Primero, crea un namespace llamado `rbac-lab` donde se realizarán las configuraciones de RBAC.
-
-Ejecutamos el siguiente comando:
+Primero, analizamos el fichero de configuracion de nustro cluster Kuberntes para leer la ip de nuestro API server:
 
 ```bash
-kubectl create namespace rbac-lab
+kubectl config view
 ```{{exec}}
 
-Ahora, en lugar de asignar permisos a un usuario, vamos a trabajar con ServiceAccounts. Comenzaremos creando un Role que permita a una ServiceAccount gestionar pods y configmaps en el namespace rbac-lab.
+Copia y guarda la url del de API Server dentro en cluster Kubernetes. 
 
-Creamos un ServiceAccount ejecutando el siguiente comando:
+Hemos creado un archivo de configuracion llamado rbac.kubeconfig cluster por este laboratorio, al fin de crear unos usuarios y poder ejeutar unas pruebas durante este lab. 
+
+Vamos a modificar el fichero rbac.kubeconfig sostituiendo el valor del campo server por el cluater con el valor que has guardado desde el paso anterior.
 
 ```bash
-kubectl create serviceaccount sa-manager --namespace rbac-lab
+vi rbac.kubeconfig
 ```{{exec}}
 
-Esto creará una ServiceAccount llamada `sa-manager` en el namespace `rbac-lab`.
-
-Seguimos creando un Role que otorgue permisos para gestionar los Pods y los ConfigMaps dentro del namespace rbac-lab.
-Creamos un archivo YAML llamado `role-configmap-pod-manager.yaml` con el siguiente contenido:
-
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: rbac-lab
-  name: configmap-pod-manager
-rules:
-- apiGroups: [""]
-  resources: ["pods", "configmaps"]
-  verbs: ["create", "get", "list", "delete"]
-```{{copy}}
-
-Aplicamos el Role al clúster:
+Comprobamos que los cambios se han guardado correctamente:
 
 ```bash
-kubectl apply -f role-configmap-pod-manager.yaml
+kubectl config --kubeconfig=rbac.kubeconfig view
 ```{{exec}}
 
-Este Role otorga permisos para gestionar pods y configmaps en el namespace rbac-lab para la ServiceAccount.
+Podemos ver que hay dos usuarios `pod-manager` y `secret-reader` con dos respectivos contextos. 
+
+Selecionamos el contexto pod-manager-kubernetes con el siguiente comando:
+
+```bash
+kubectl config --kubeconfig=rbac.kubeconfig use-context pod-manager-kubernetes
+```{{exec}}
+
+Verificamos como ultimo paso inicial que usuario `pod-manager` falta de los permisos necesarios para listar los pods
+
+```bash
+kubectl --kubeconfig=developer.kubeconfig get pods
+```{{exec}}
+
+Deberias recibir un mensaje de error contenente la palabra **Forbidden** y una explicacion que usuario non puede ver los pods por una falta de permisos. 
