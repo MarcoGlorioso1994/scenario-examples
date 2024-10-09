@@ -1,0 +1,52 @@
+En este paso del laboratorio, queremos analizar el concepto de `Revisión` en nuestro chart propietario.
+
+Recuerda que cada vez que realizas una actualización o modificación de un release, Helm incrementa el número de revisión, lo que permite llevar un historial de cambios para dicho release.
+
+Para modificar el Despliegue con Helm, vamos a realizar cambios en el archivo `values.yaml`:
+
+Actualiza la imagen:
+
+```yaml
+image:
+  repository: nginx
+  tag: "1.21.0"
+```{{copy}}
+
+En el archivo `values.yaml`, configura un servicio de tipo ClusterIP** y otro de tipo NodePort.
+
+```yaml
+service:
+  type: ClusterIP
+  port: 80
+  nodePort: 30007
+```{{copy}}
+
+Como último cambio, queremos desplegar un **Ingress** en nuestro clúster de Kubernetes. Para ello, vamos a modificar algunos campos en el archivo `values.yaml`:
+
+```yaml
+ingress:
+  enabled: true
+  name: my-ingress
+  path: /
+  hosts:
+    - host: myapp.local
+      paths:
+        - /
+  tls: []  # Configuración TLS si es necesaria
+```{{copy}}
+
+Ahora deseamos realizar una actualización de nuestra aplicación `my-app-nginx`. Para hacer el upgrade, utilizamos el siguiente comando:
+
+```bash
+helm upgrade my-app-nginx ./my-chart
+```{{exec}}
+
+Comprueba los recursos desplegados con el siguiente comando:
+
+```bash
+kubectl get pods
+kubectl get services
+kubectl get ingress
+```{{exec}}
+
+Con estos cambios, has actualizado exitosamente tu aplicación en Kubernetes utilizando Helm, aprovechando el concepto de `Revisión` para mantener un historial de versiones. Esto no solo facilita la gestión de tu aplicación, sino que también mejora la capacidad de rastreo y reversión en caso de que se necesiten deshacer cambios.

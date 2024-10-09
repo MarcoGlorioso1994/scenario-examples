@@ -1,0 +1,1 @@
+Este laboratorio tiene como objetivo guiar al usuario a través de la instalación y configuración de Helm, utilizando comandos prácticos para desplegar y gestionar versiones de una aplicación. Aprenderemos a instalar, verificar el estado de las aplicaciones y realizar rollbacks, permitiendo un control efectivo sobre nuestros despliegues.

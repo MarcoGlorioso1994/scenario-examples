@@ -1,0 +1,1 @@
+En este laboratorio, aprenderás a crear y configurar un nuevo chart de Helm en un entorno Kubernetes. Asumimos que ya tienes instalado Kubernetes (k8s) y Helm.

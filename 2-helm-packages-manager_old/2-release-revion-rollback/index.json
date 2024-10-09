@@ -1,0 +1,44 @@
+{
+  "title": "Gestión de Releases, Revisiones y Rollbacks con Helm en Kubernetes",
+  "description": "Aprende a gestionar releases, revisiones y rollbacks con Helm por aplicaciones en Kubernetes.",
+  "difficulty": "intermediate",
+  "details": {
+    "assets": {
+      "host01": [
+        {"file": "init.sh", "target": "/ks", "chmod": "+x"},
+        {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
+        {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "background": "init/background.sh",
+      "foreground": "init/foreground.sh",
+      "credits": ""
+    },
+    "steps": [
+      {
+        "title": "Creación de múltiples releases",
+        "text": "step1/text.md",
+        "hint": "Usa `helm install` para crear una nueva release de la aplicación."
+      },
+      {
+        "title": "Creación de nuevas revisiones",
+        "text": "step2/text.md",
+        "hint": "Usa `helm upgrade` para actualizar una release de la aplicación."
+      },
+      {
+        "title": "Rollback de una aplicación",
+        "text": "step3/text.md",
+        "hint": "Usa 'helm rollback' para regresar la aplicación a una versión anterior."
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
+

@@ -1,0 +1,1 @@
+Al completar este laboratorio, hemos aprendido a manejar releases, revisar el historial de despliegues y utilizar rollbacks para revertir a versiones anteriores en Helm. Estas habilidades son esenciales para mantener el control sobre nuestras aplicaciones en Kubernetes, asegurando una gestión ágil y fiable de actualizaciones y restauraciones en caso de fallos o problemas.

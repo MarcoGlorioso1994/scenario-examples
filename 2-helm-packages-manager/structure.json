@@ -1,16 +1,8 @@
 {
   "items": [
-    { "path": "1-install-config-repo-chart" },
-    { "path": "install" },
-    { "path": "use" },
-    { "path": "use-the-search" },
-    { "path": "pull-show" },
-    { "path": "helm-get" },
-    { "path": "history-rollback" },
-    { "path": "production" },
-    { "path": "override-values" },
-    { "path": "automatic-roll-deployment" },
-    { "path": "conditional-deployment" }
+    { "path": "1-basic-commands" },
+    { "path": "2-release-revion-rollback" },
+    { "path": "3-create-deploy-newchart" }
   ]
 }
 
