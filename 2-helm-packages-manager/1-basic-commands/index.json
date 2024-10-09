@@ -1,6 +1,6 @@
 {
-  "title": "Instalación y configuración de Helm con un Chart existente",
-  "description": "Aprende a instalar y configurar Helm en un clúster de Kubernetes con la instalación de un chart existente.",
+  "title": "Comandos basicos de Helm",
+  "description": "Aprende a utilizar algunos comandos básicos de Helm en un clúster de Kubernetes.",
   "difficulty": "intermediate",
   "details": {
     "assets": {

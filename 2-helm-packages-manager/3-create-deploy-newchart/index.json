@@ -1,6 +1,6 @@
 {
-  "title": "Gestión de Releases, Revisiones y Rollbacks con Helm en Kubernetes",
-  "description": "Aprende a gestionar releases, revisiones y rollbacks con Helm por aplicaciones en Kubernetes.",
+  "title": "Creación y despliegue de un Chart Helm en Kubernetes",
+  "description": "Aprende a crear, personalizar y desplegar un nuevo chart Helm para aplicaciones en Kubernetes.",
   "difficulty": "intermediate",
   "details": {
     "assets": {
