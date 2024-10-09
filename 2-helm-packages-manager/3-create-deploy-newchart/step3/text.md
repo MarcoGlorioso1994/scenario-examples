@@ -12,7 +12,7 @@ image:
   tag: "1.21.0"
 ```{{copy}}
 
-En el archivo `values.yaml`, configura un servicio de tipo ClusterIP** y otro de tipo NodePort.
+En el archivo `values.yaml`, configura un **Servicio** de tipo **ClusterIP** y otro de tipo **NodePort**.
 
 ```yaml
 service:

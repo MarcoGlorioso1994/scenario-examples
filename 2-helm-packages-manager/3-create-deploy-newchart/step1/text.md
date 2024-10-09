@@ -6,11 +6,17 @@ helm create my-chart
 
 Familiaríza con cada archivo generado automáticamente:
 
-**Chart.yaml**: Contiene los metadatos del chart.
-**values.yaml**: Valores por defecto utilizados por el chart.
-Directorio **templates/**: Contiene los manifiestos Kubernetes que se renderizan con los valores.
+**Chart.yaml** Contiene los metadatos del chart.
+**values.yaml** Valores por defecto utilizados por el chart.
+Directorio **templates/** Contiene los manifiestos Kubernetes que se renderizan con los valores.
 
-Ahora vamos a personalizar los valores predeterminados en `values.yaml`. Por ejemplo:
+Ahora vamos a personalizar los valores predeterminados en `values.yaml`.
+
+Modifica el campo replicaCount para especificar el número de réplicas que deseas para tu aplicación:
+
+```yaml
+replicaCount: 3
+```{{copy}}
 
 Cambia la imagen de la aplicación:
 
@@ -27,12 +33,6 @@ resources:
   limits:
     cpu: 100m
     memory: 128Mi
-```{{copy}}
-
-Modifica el campo replicaCount para especificar el número de réplicas que deseas para tu aplicación:
-
-```yaml
-replicaCount: 3
 ```{{copy}}
 
 Puedes personalizar los manifiestos en `templates/`. Por ejemplo, para el `deployment.yaml`:
