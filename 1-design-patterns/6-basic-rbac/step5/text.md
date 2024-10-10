@@ -28,7 +28,7 @@ curl localhost:8001/api/v1/namespaces/rbac-dev/pods
 
 Deberías recibir los detalles de los pods en el namespace `rbac-dev`.
 
-Ahora probamos a crear un nuevo pod en el namespace. Para hacerlo, crea un archivo pod.yaml con la definición de un pod básico de Nginx, con el nombre nginx-basic. Una vez hecho esto, ejecutamos una solicitud POST HTTP hacia las API Server de Kubernetes:
+Ahora probamos a crear un nuevo pod en el namespace. Para hacerlo, crea un archivo `pod.yaml` con la definición de un pod básico de Nginx, con el nombre `nginx-basic`. Una vez hecho esto, ejecutamos una solicitud POST HTTP hacia las API Server de Kubernetes:
 
 ```bash
 curl -X POST --data-binary "@pod.yaml" -H 'Content-Type: application/yaml' localhost:8001/api/v1/namespaces/rbac-dev/pods
@@ -40,7 +40,7 @@ Ahora podemos comprobar que el ServiceAccount no tiene permisos para eliminar el
 
 ```bash
 curl -X DELETE localhost:8001/api/v1/namespaces/rbac-dev/pods/nginx-basic
-```{{copy}}
+```{{exec}}
 
 Deberías recibir un error 403 "Forbidden". Esto significa que la cuenta de servicio en el namespace rbac-dev no tiene los permisos suficientes para eliminar un pod.
 
@@ -72,6 +72,6 @@ Para verificar los permisos asociados con el ClusterRole secret-reader, interrog
 
 ```bash
 curl localhost:8001/api/v1/secrets
-```{{copy}}
+```{{exec}}
 
 Deberías recibir la lista de los secrets definidos en el clúster de Kubernetes. Es importante notar que en la URL HTTP hemos omitido la parte de la ruta que indicaba el namespace. Esto es correcto porque queremos enviar la solicitud a nivel de clúster. Hemos definido un ClusterRole para otorgar permisos a nivel global en el clúster.
