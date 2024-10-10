@@ -6,7 +6,7 @@ Crea un archivo YAML llamado `nginx-deployment.yaml` con el siguiente contenido:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx
 spec:
   replicas: 2
   selector:
@@ -19,30 +19,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
-```{{copy}}
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: db-deployment
-  labels:
-    app: db
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: db
-  template:
-    metadata:
-      labels:
-        app: db
-    spec:
-      containers:
-      - name: db
         image: nginx
         ports:
         - containerPort: 80

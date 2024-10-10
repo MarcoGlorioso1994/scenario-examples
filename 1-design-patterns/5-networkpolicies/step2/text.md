@@ -18,25 +18,6 @@ spec:
           app: nginx
 ```{{copy}}
 
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: deny-egress-to-ip-range
-  namespace: default
-spec:
-  podSelector:
-    matchLabels:
-      app: nginx
-  policyTypes:
-  - Egress
-  egress:
-  - to:
-    - podSelector:
-        matchLabels:
-          app: db
-```{{copy}}
-
 Esta política permite el tráfico de entrada (Ingress) solo desde otros Pods que tienen la etiqueta `app: nginx`.
 
 Ahora podemos aplicar el manifiesto para aplica la política:
