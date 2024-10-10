@@ -43,8 +43,6 @@ ingress:
   tls: []
 ```{{copy}}
 
-Aquí tienes el texto mejorado en español:
-
 También necesitamos realizar algunos ajustes en el archivo **service.yaml** ubicado en el directorio **/my-chart/templates/service.yaml**.
 
 Modificamos el campo `name` del servicio de la siguiente manera:
@@ -72,3 +70,9 @@ kubectl get ingress
 ```{{exec}}
 
 Con estos cambios, has actualizado exitosamente tu aplicación en Kubernetes utilizando Helm, aprovechando el concepto de `Revisión` para mantener un historial de versiones. Esto no solo facilita la gestión de tu aplicación, sino que también mejora la capacidad de rastreo y reversión en caso de que se necesiten deshacer cambios.
+
+Puedes revisar las diferentes revisiones de tu release con el siguiente comando:
+
+```bash
+helm history nginx
+```{{exec}}
