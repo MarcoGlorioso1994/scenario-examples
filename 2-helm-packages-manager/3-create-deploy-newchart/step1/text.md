@@ -34,19 +34,3 @@ resources:
     cpu: 100m
     memory: 128Mi
 ```{{copy}}
-
-Puedes personalizar los manifiestos en `templates/`. Por ejemplo, para el `deployment.yaml`:
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: {{ .Release.Name }}-nginx
-spec:
-  replicas: {{ .Values.replicaCount }}
-  template:
-    spec:
-      containers:
-      - name: nginx
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-```{{copy}}

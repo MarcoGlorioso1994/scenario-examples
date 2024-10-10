@@ -3,7 +3,7 @@ En este paso vamos a instalar el chart en el clúster Kubernetes.
 Despliega la aplicación usando Helm con el siguiente comando:
 
 ```bash
-helm install my-nginx ./my-chart
+helm install nginx ./my-chart
 ```{{exec}}
 
 Comprueba que los recursos se han desplegado correctamente en Kubernetes con el siguiente comando:

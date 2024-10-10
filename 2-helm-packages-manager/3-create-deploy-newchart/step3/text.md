@@ -12,13 +12,15 @@ image:
   tag: "1.21.0"
 ```{{copy}}
 
-En el archivo `values.yaml`, configura un **Servicio** de tipo **ClusterIP** y otro de tipo **NodePort**.
+En el archivo `values.yaml`, configura un **Servicio** de tipo **ClusterIP**.
 
 ```yaml
 service:
+  enabled: true
+  name: nginx-svc
   type: ClusterIP
   port: 80
-  nodePort: 30007
+  targetPort: 80
 ```{{copy}}
 
 Como último cambio, queremos desplegar un **Ingress** en nuestro clúster de Kubernetes. Para ello, vamos a modificar algunos campos en el archivo `values.yaml`:
@@ -27,18 +29,24 @@ Como último cambio, queremos desplegar un **Ingress** en nuestro clúster de Ku
 ingress:
   enabled: true
   name: my-ingress
-  path: /
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
   hosts:
     - host: myapp.local
       paths:
-        - /
-  tls: []  # Configuración TLS si es necesaria
+        - path: /
+          pathType: ImplementationSpecific
+          backend:
+            serviceName: nginx-svc
+            servicePort: 80
+  tls: []
 ```{{copy}}
 
-Ahora deseamos realizar una actualización de nuestra aplicación `my-app-nginx`. Para hacer el upgrade, utilizamos el siguiente comando:
+Ahora deseamos realizar una actualización de nuestra aplicación `nginx`. Para hacer el upgrade, utilizamos el siguiente comando:
 
 ```bash
-helm upgrade my-app-nginx ./my-chart
+helm upgrade nginx ./my-chart
 ```{{exec}}
 
 Comprueba los recursos desplegados con el siguiente comando:
