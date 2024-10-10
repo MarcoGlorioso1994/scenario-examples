@@ -43,7 +43,21 @@ ingress:
   tls: []
 ```{{copy}}
 
-Ahora deseamos realizar una actualización de nuestra aplicación `nginx`. Para hacer el upgrade, utilizamos el siguiente comando:
+Aquí tienes el texto mejorado en español:
+
+También necesitamos realizar algunos ajustes en el archivo **service.yaml** ubicado en el directorio **/my-chart/templates/service.yaml**.
+
+Modificamos el campo `name` del servicio de la siguiente manera:
+
+```yaml
+name: {{ .Values.service.name }}
+```{{copy}}
+
+Este último cambio nos permite definir el nombre del servicio con el valor **`service.name`** establecido en el archivo **`values.yaml`** en la propiedad `service.name`
+
+Ahora deseamos realizar una actualización de nuestra aplicación **`nginx`**. Para hacer el upgrade, utilizamos el siguiente comando:
+
+Si necesitas más ajustes o información adicional, ¡hazmelo saber!
 
 ```bash
 helm upgrade nginx ./my-chart
