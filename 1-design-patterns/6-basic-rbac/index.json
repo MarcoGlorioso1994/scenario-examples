@@ -9,28 +9,24 @@
     },
     "steps": [
       {
-        "title": "Configurar el clúster con el archivo KUBECONFIG",
+        "title": "Crear Role en el namespace",
         "text": "step1/text.md"
       },
       {
-        "title": "Crear Role en el namespace",
+        "title": "Vincular Roles con RoleBindings",
         "text": "step2/text.md"
       },
       {
-        "title": "Vincular Roles con RoleBindings",
+        "title": "Crear un ClusterRole en el namespace",
         "text": "step3/text.md"
       },
       {
-        "title": "Crear un ClusterRole",
+        "title": "Vincular ClusterRoles con ClusterRoleBindings",
         "text": "step4/text.md"
       },
       {
-        "title": "Vincular ClusterRoles con ClusterRoleBindings",
+        "title": "Validar los permisos de las cuentas de servicio SAs",
         "text": "step5/text.md"
-      },
-      {
-        "title": "Validar los permisos de los usuarios",
-        "text": "step6/text.md"
       }
     ],
     "finish": {

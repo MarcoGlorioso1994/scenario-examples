@@ -1,27 +1,32 @@
-Crea un **RoleBinding** para vincular el **Role** `configmap-pod-manager` con el usuario `pod-manager` en el namespace `rbac-lab`.
+Creamos un nuevo namespace `rbac-qa` con el siguiente contenido:
 
-Crea un archivo llamado `rolebinding-pod-manager.yaml` con el siguiente contenido:
+```bash
+kubectl create namespace rbac-qa
+```{{exec}}
+
+Al crear un nuevo namespace, automáticamente se genera un ServiceAccount por defecto. Verificamos que exista un ServiceAccount en el namespace `rbac-qa`:
+
+```bash
+kubectl get serviceaccount -n rbac-qa
+```{{exec}}
+
+Ahora crearemos un ClusterRole que permita al ServiceAccount `default` leer Secrets en todo el clúster.
+
+Para ello, creamos un ClusterRole que otorgue permisos para leer Secrets a nivel global en el clúster. Creamos un archivo YAML llamado `clusterrole-secret.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRole
 metadata:
-  name: configmap-pod-binding
-  namespace: rbac-lab
-subjects:
-- kind: User
-  name: pod-manager
-  namespace: rbac-lab
-roleRef:
-  kind: Role
-  name: configmap-pod-manager
-  apiGroup: rbac.authorization.k8s.io
+  name: secret-reader
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "list"]
 ```{{copy}}
 
-Aplica el RoleBinding:
+Aplicamos el ClusterRole al clúster:
 
 ```bash
-kubectl apply -f rolebinding-pod-manager.yaml
+kubectl apply -f clusterrole-secret.yaml
 ```{{exec}}
-
-Esto vincula el Role `configmap-pod-manager` con el usuario `pod-manager`.

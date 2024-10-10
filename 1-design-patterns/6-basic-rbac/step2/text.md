@@ -1,29 +1,28 @@
-Seguimos creando un Role que otorgue permisos para gestionar los Pods y los ConfigMaps dentro del namespace `rbac-lab`.
 
-Como primer paso, creamos el namespace `rbac-lab` con el siguiente contenido:
+Crea un **RoleBinding** para vincular el **Role** `configmap-pod-manager` con la ServiceAccount `default` en el namespace `rbac-dev`.
 
-```bash
-kubectl create namespace rbac-lab
-```{{exec}}
-
-Creamos un archivo YAML llamado `role-configmap-pod-manager.yaml` con el siguiente contenido:
+Crea un archivo llamado `rolebinding-configmap-pod.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: RoleBinding
 metadata:
-  namespace: rbac-lab
+  name: configmap-pod-binding
+  namespace: rbac-dev
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: rbac-dev
+roleRef:
+  kind: Role
   name: configmap-pod-manager
-rules:
-- apiGroups: [""]
-  resources: ["pods", "configmaps"]
-  verbs: ["create", "get", "list"]
+  apiGroup: rbac.authorization.k8s.io
 ```{{copy}}
 
-Aplicamos el Role al clúster:
+Aplica el RoleBinding:
 
 ```bash
-kubectl apply -f role-configmap-pod-manager.yaml
+kubectl apply -f rolebinding-configmap-pod.yaml
 ```{{exec}}
 
-Este Role otorga permisos para gestionar Pods y ConfigMaps en el namespace `rbac-lab` a los usuarios.
+Esto vincula el Role `configmap-pod-manager` con a cuenta ServiceAccount `default`.

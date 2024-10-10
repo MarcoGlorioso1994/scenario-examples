@@ -1,20 +1,26 @@
-Ahora crearemos un ClusterRole que permita al usuario `secret-reader` leer Secrets en todo el clúster.
+Crea un ClusterRoleBinding para vincular el ClusterRole que otorga acceso de lectura a los Secrets a nivel de clúster al ServiceAccount `default` del namespace `rbac-qa`.
 
-A continuación, creamos un ClusterRole que otorgue permisos para leer Secrets a nivel global en el clúster. Creamos un archivo YAML llamado `clusterrole-secret-reader.yaml` con el siguiente contenido:
+Crea un archivo llamado `clusterrolebinding-secret.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: ClusterRoleBinding
 metadata:
+  name: secret-reader-binding
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: rbac-qa
+roleRef:
+  kind: ClusterRole
   name: secret-reader
-rules:
-- apiGroups: [""]
-  resources: ["secrets"]
-  verbs: ["get", "list"]
+  apiGroup: rbac.authorization.k8s.io
 ```{{copy}}
 
-Aplicamos el ClusterRole al clúster:
+Aplica el ClusterRoleBinding:
 
 ```bash
-kubectl apply -f clusterrole-secret-reader.yaml
+kubectl apply -f clusterrolebinding-secret.yaml
 ```{{exec}}
+
+Esto vincula el ClusterRole `secret-reader` con el ServiceAccount `default` del namespace `rbac-qa`.
